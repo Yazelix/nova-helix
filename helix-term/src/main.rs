@@ -27,6 +27,7 @@ fn main() -> Result<()> {
 async fn main_impl() -> Result<i32> {
     let mut args = Args::parse_args().context("could not parse arguments")?;
 
+    helix_loader::initialize_config_dir(args.config_dir.take());
     helix_loader::initialize_config_file(args.config_file.clone());
     helix_loader::initialize_log_file(args.log_file.clone());
 
@@ -55,6 +56,7 @@ FLAGS:
                                    the default is the same as 'all', but with languages filtering.
     -g, --grammar {{fetch|build}}    Fetch or builds tree-sitter grammars listed in languages.toml.
     -c, --config <file>            Specify a file to use for configuration
+    --config-dir <path>            Specify a directory to use for configuration
     -v                             Increase logging verbosity each use for up to 3 times
     --log <file>                   Specify a file to use for logging
                                    (default file: {})

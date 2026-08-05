@@ -1,3 +1,21 @@
+# Yazelix Helix Fork
+
+This fork tracks Helix's Steel-enabled line. Native changes are limited to
+capabilities unavailable to Steel; editor behavior belongs in Steel plugins
+when its APIs can satisfy the contract.
+
+## Downstream LOC Scorecard
+
+Measured against the pinned upstream Steel tip and excluding documentation:
+
+| Surface | Added | Removed | Net |
+| --- | ---: | ---: | ---: |
+| Config-directory runtime seam | 19 | 0 | +19 |
+| CLI completions | 12 | 4 | +8 |
+| **Total** | **31** | **4** | **+27** |
+
+## Upstream Helix README
+
 <div align="center">
 
 <h1>

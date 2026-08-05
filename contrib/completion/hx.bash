@@ -17,11 +17,15 @@ _hx() {
         mapfile -t COMPREPLY < <(compgen -W """clipboard languages all-languages all $languages""" -- "$cur")
         return 0
         ;;
+    --config-dir)
+        mapfile -t COMPREPLY < <(compgen -d -- "$cur")
+        return 0
+        ;;
     esac
 
     case "$2" in
     -*)
-        mapfile -t COMPREPLY < <(compgen -W "-h --help --tutor -V --version -v -vv -vvv --health -g --grammar --vsplit --hsplit -c --config --log" -- """$2""")
+        mapfile -t COMPREPLY < <(compgen -W "-h --help --tutor -V --version -v -vv -vvv --health -g --grammar --vsplit --hsplit -c --config --config-dir --log" -- """$2""")
         return 0
         ;;
     *)

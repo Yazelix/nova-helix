@@ -18,6 +18,7 @@ _hx() {
 		"--hsplit[Splits all given files horizontally]" \
 		"-c[Specifies a file to use for configuration]" \
 		"--config[Specifies a file to use for configuration]" \
+		"--config-dir[Specifies a directory to use for configuration]:directory:_directories" \
 		"-w[Specify initial working directory]" \
 		"--working-dir[Specify initial working directory]" \
 		"--log[Specifies a file to use for logging]" \

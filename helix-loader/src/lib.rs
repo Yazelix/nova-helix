@@ -14,7 +14,15 @@ static RUNTIME_DIRS: once_cell::sync::Lazy<Vec<PathBuf>> =
 
 static CONFIG_FILE: once_cell::sync::OnceCell<PathBuf> = once_cell::sync::OnceCell::new();
 
+static CONFIG_DIR: once_cell::sync::OnceCell<PathBuf> = once_cell::sync::OnceCell::new();
+
 static LOG_FILE: once_cell::sync::OnceCell<PathBuf> = once_cell::sync::OnceCell::new();
+
+pub fn initialize_config_dir(specified_dir: Option<PathBuf>) {
+    if let Some(config_dir) = specified_dir {
+        CONFIG_DIR.set(config_dir).ok();
+    }
+}
 
 pub fn initialize_config_file(specified_file: Option<PathBuf>) {
     let config_file = specified_file.unwrap_or_else(default_config_file);
@@ -118,6 +126,10 @@ pub fn runtime_file(rel_path: impl AsRef<Path>) -> PathBuf {
 }
 
 pub fn config_dir() -> PathBuf {
+    if let Some(config_dir) = CONFIG_DIR.get() {
+        return config_dir.clone();
+    }
+
     // TODO: allow env var override
     let strategy = choose_base_strategy().expect("Unable to find the config directory!");
     let mut path = strategy.config_dir();

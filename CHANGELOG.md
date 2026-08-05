@@ -20,6 +20,16 @@ Updated languages and queries:
 Packaging:
 -->
 
+# Yazelix fork
+
+Commands:
+
+* Add `--config-dir <path>` to override the Helix configuration directory independently of `--config`.
+
+Fixes:
+
+* Restore Elvish completion after ordinary arguments and for `--log` paths.
+
 # 25.07.1 (2025-07-18)
 
 This is a patch release which lowers the GLIBC requirements of the release artifacts published to GitHub ([#13983](https://github.com/helix-editor/helix/pull/13983))
