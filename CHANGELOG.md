@@ -26,6 +26,7 @@ Commands:
 
 * Add `--config-dir <path>` to override the Helix configuration directory independently of `--config`.
 * Provide Steel actions that open files or a directory picker in the current Helix instance while setting its managed workspace.
+* Provide an authenticated, bounded loopback transport that hands one schema-2 request per connection to a Steel handler on Helix's editor thread and stops cleanly with its engine.
 
 Fixes:
 

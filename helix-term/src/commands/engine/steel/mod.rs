@@ -1,4 +1,5 @@
 pub mod components;
+mod yazelix_transport;
 
 use arc_swap::{ArcSwap, ArcSwapAny};
 use helix_core::{
@@ -4217,6 +4218,7 @@ fn configure_engine_impl(mut engine: Engine) -> Engine {
     );
 
     configure_builtin_sources(&mut engine, true);
+    engine.register_module(yazelix_transport::module());
 
     // Hooks
     engine.register_fn("register-hook!", register_hook);
