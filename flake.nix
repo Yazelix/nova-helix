@@ -26,6 +26,7 @@
   in {
     packages = eachSystem (system: {
       inherit (pkgsFor.${system}) helix;
+      yazelix_helix = pkgsFor.${system}.helix;
       /*
       The default Helix build. Uses the latest stable Rust toolchain, and unstable
       nixpkgs.

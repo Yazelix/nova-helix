@@ -30,6 +30,10 @@ Fixes:
 
 * Restore Elvish completion after ordinary arguments and for `--log` paths.
 
+Packaging:
+
+* Export the Steel-enabled editor as `packages.<system>.yazelix_helix` for Yazelix consumers.
+
 # 25.07.1 (2025-07-18)
 
 This is a patch release which lowers the GLIBC requirements of the release artifacts published to GitHub ([#13983](https://github.com/helix-editor/helix/pull/13983))

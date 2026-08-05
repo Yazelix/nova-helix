@@ -12,7 +12,8 @@ Measured against the pinned upstream Steel tip and excluding documentation:
 | --- | ---: | ---: | ---: |
 | Config-directory runtime seam | 19 | 0 | +19 |
 | CLI completions | 12 | 4 | +8 |
-| **Total** | **31** | **4** | **+27** |
+| Nix package export | 1 | 0 | +1 |
+| **Total** | **32** | **4** | **+28** |
 
 ## Upstream Helix README
 
