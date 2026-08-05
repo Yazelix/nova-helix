@@ -29,7 +29,9 @@
       yazelix_helix = pkgsFor.${system}.helix;
       yazelix_helix_steel = pkgsFor.${system}.runCommand "yazelix-helix-steel" {} ''
         install -D -m 0444 ${./yazelix/steel/bridge-actions.scm} \
-          "$out/share/yazelix-helix/steel/bridge-actions.scm"
+          "$out/share/yazelix-helix/steel/yazelix/bridge-actions.scm"
+        install -D -m 0444 ${./yazelix/steel/bridge.scm} \
+          "$out/share/yazelix-helix/steel/yazelix/bridge.scm"
       '';
       /*
       The default Helix build. Uses the latest stable Rust toolchain, and unstable

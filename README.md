@@ -5,9 +5,10 @@ capabilities unavailable to Steel; editor behavior belongs in Steel plugins
 when its APIs can satisfy the contract.
 
 `packages.<system>.yazelix_helix_steel` installs the isolated
-`bridge-actions.scm` module. It opens files or a directory picker in the
-current Helix instance while keeping the managed workspace and picker root
-distinct.
+`yazelix/bridge-actions.scm` and `yazelix/bridge.scm` modules. The bridge
+validates `helix.open_files` and `helix.open_directory` payloads before opening
+files or a directory picker in the current instance. The managed workspace and
+picker root remain distinct.
 
 The `yazelix/transport` built-in module provides the native mechanism Steel
 cannot own safely. `(transport-start token handler)` binds an OS-assigned
@@ -18,6 +19,8 @@ and response, limited to 64 KiB and authenticated before handoff to the Steel
 handler on Helix's editor thread. The handler receives only `request_id`,
 `action`, and `payload`; instance selection, token and endpoint publication,
 registry state, and managed-session policy remain outside this fork.
+`(yzx-helix-start token)` composes that transport with the Steel action handler
+and returns the caller-owned server object.
 
 [Steel plugin integration notes](docs/steel-plugin-integration.md) record the
 plugin APIs that worked and the lifecycle gaps that kept the transport in Rust.
@@ -32,11 +35,12 @@ Measured against the pinned upstream Steel tip and excluding documentation:
 | CLI completions | 12 | 4 | +8 |
 | Nix package export | 1 | 0 | +1 |
 | Steel bridge actions | 15 | 0 | +15 |
-| Steel action package | 4 | 0 | +4 |
-| Steel action test | 39 | 0 | +39 |
+| Steel request composition | 39 | 0 | +39 |
+| Steel plugin package | 6 | 0 | +6 |
+| Steel integration test | 68 | 0 | +68 |
 | Native transport seam | 384 | 0 | +384 |
 | Native transport tests | 167 | 0 | +167 |
-| **Total** | **641** | **4** | **+637** |
+| **Total** | **711** | **4** | **+707** |
 
 ## Upstream Helix README
 

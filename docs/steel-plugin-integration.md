@@ -27,8 +27,13 @@ lines of Scheme:
   adapter or native action table.
 
 Helix's `provide` and `require` module flow made the code easy to isolate and
-package. The integration test registers a stub `helix/commands.scm`, loads the
-real Yazelix module, and checks command order without starting the editor UI.
+package. Nested filesystem modules must import siblings relative to their own
+file. The integration test registers only a stub `helix/commands.scm`, then
+loads the real Yazelix modules through Steel's filesystem resolver and checks
+command order without starting the editor UI.
+Steel also handles the request boundary cleanly: a 39-line composition module
+validates the two action payloads, rejects unknown actions before editor
+commands run, and starts the transport with a caller-provided token.
 
 The embedding API also supports a useful hybrid boundary. Rust retains a
 rooted Steel closure, sends work through Helix's editor job queue, installs the
@@ -39,7 +44,9 @@ Rust contains no file-opening, picker, workspace, or session policy.
 Relevant source:
 
 - [Steel actions](../yazelix/steel/bridge-actions.scm)
-- [Steel action integration test](../helix-term/tests/yazelix_steel.rs)
+- [Steel request composition](../yazelix/steel/bridge.scm)
+- [Steel integration test program](../helix-term/tests/yazelix_steel.scm)
+- [Steel integration test harness](../helix-term/tests/yazelix_steel.rs)
 - [Native transport seam](../helix-term/src/commands/engine/steel/yazelix_transport.rs)
 
 ## Why the server stayed in Rust
