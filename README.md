@@ -4,6 +4,12 @@ This fork tracks Helix's Steel-enabled line. Native changes are limited to
 capabilities unavailable to Steel; editor behavior belongs in Steel plugins
 when its APIs can satisfy the contract.
 
+`packages.<system>.yazelix_helix_steel` installs the isolated
+`bridge-actions.scm` module. It opens files or a directory picker in the
+current Helix instance while keeping the managed workspace and picker root
+distinct. Instance selection and external request transport remain outside
+the module.
+
 ## Downstream LOC Scorecard
 
 Measured against the pinned upstream Steel tip and excluding documentation:
@@ -13,7 +19,10 @@ Measured against the pinned upstream Steel tip and excluding documentation:
 | Config-directory runtime seam | 19 | 0 | +19 |
 | CLI completions | 12 | 4 | +8 |
 | Nix package export | 1 | 0 | +1 |
-| **Total** | **32** | **4** | **+28** |
+| Steel bridge actions | 15 | 0 | +15 |
+| Steel action package | 4 | 0 | +4 |
+| Steel action test | 39 | 0 | +39 |
+| **Total** | **90** | **4** | **+86** |
 
 ## Upstream Helix README
 

@@ -25,6 +25,7 @@ Packaging:
 Commands:
 
 * Add `--config-dir <path>` to override the Helix configuration directory independently of `--config`.
+* Provide Steel actions that open files or a directory picker in the current Helix instance while setting its managed workspace.
 
 Fixes:
 
@@ -33,6 +34,7 @@ Fixes:
 Packaging:
 
 * Export the Steel-enabled editor as `packages.<system>.yazelix_helix` for Yazelix consumers.
+* Export the isolated Steel action module as `packages.<system>.yazelix_helix_steel`.
 
 # 25.07.1 (2025-07-18)
 
