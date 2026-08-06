@@ -30,4 +30,4 @@ log = "~0.4"
 steel-core = { workspace = true, optional = true }
 
 [target.'cfg(windows)'.dependencies]
-crossterm = { version = "0.28", optional = true }
+crossterm = { version = "0.29", optional = true }
