@@ -1,0 +1,47 @@
+name: Yazelix Steel Bridge
+
+on:
+  push:
+    branches:
+      - yazelix-steel-rebuild
+  workflow_dispatch:
+
+concurrency:
+  group: yazelix-steel-bridge-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  MSRV: "1.90"
+  RUST_BACKTRACE: 1
+
+jobs:
+  steel-bridge:
+    name: Steel bridge
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v6
+
+      - uses: ./.github/actions/rust-setup
+        with:
+          toolchain: ${{ env.MSRV }}
+          components: rustfmt
+          cache-key: yazelix-steel-bridge
+
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+
+      - name: Check Steel-enabled Helix
+        run: cargo check -p helix-term --features steel
+
+      - name: Test native transport
+        run: cargo test -p helix-term --lib --features steel
+
+      - name: Test Steel composition
+        run: |
+          cargo test -p helix-term --test yazelix_steel --features steel
+          cargo test -p helix-term --test yazelix_steel --no-default-features
