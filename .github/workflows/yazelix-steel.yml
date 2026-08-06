@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - yazelix-steel-rebuild
-  workflow_dispatch:
 
 concurrency:
   group: yazelix-steel-bridge-${{ github.ref }}
@@ -36,12 +35,12 @@ jobs:
         run: cargo fmt --all -- --check
 
       - name: Check Steel-enabled Helix
-        run: cargo check -p helix-term --features steel
+        run: cargo check --locked -p helix-term --features steel
 
       - name: Test native transport
-        run: cargo test -p helix-term --lib --features steel
+        run: cargo test --locked -p helix-term --lib --features steel
 
       - name: Test Steel composition
         run: |
-          cargo test -p helix-term --test yazelix_steel --features steel
-          cargo test -p helix-term --test yazelix_steel --no-default-features
+          cargo test --locked -p helix-term --test yazelix_steel --features steel
+          cargo test --locked -p helix-term --test yazelix_steel --no-default-features

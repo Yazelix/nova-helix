@@ -26,7 +26,7 @@ and returns the caller-owned server object.
 plugin APIs that worked and the lifecycle gaps that kept the transport in Rust.
 
 The `Yazelix Steel Bridge` workflow runs one read-only Ubuntu job on rebuild
-branch pushes or manual dispatch. It checks formatting, Steel-enabled
+branch pushes. It checks formatting, lockfile-consistent Steel-enabled
 compilation, native transport behavior, filesystem-backed Steel composition,
 and optional-feature compilation. Superseded runs are cancelled, the job has a
 30-minute timeout, and it publishes no artifacts or grammar cache.
@@ -46,8 +46,8 @@ Measured against the pinned upstream Steel tip and excluding documentation:
 | Steel integration test | 68 | 0 | +68 |
 | Native transport seam | 384 | 0 | +384 |
 | Native transport tests | 167 | 0 | +167 |
-| Focused CI workflow | 47 | 0 | +47 |
-| **Total** | **758** | **4** | **+754** |
+| Focused CI workflow | 46 | 0 | +46 |
+| **Total** | **757** | **4** | **+753** |
 
 ## Upstream Helix README
 
