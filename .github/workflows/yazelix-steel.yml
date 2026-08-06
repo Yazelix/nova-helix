@@ -3,7 +3,8 @@ name: Yazelix Steel Bridge
 on:
   push:
     branches:
-      - yazelix-steel-rebuild
+      - main
+  workflow_dispatch:
 
 concurrency:
   group: yazelix-steel-bridge-${{ github.ref }}
