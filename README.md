@@ -1,4 +1,4 @@
-# Yazelix Helix Fork
+# Nova Helix Fork
 
 This fork tracks Helix's Steel-enabled line. Native changes are limited to
 capabilities unavailable to Steel; editor behavior belongs in Steel plugins

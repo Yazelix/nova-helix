@@ -2,10 +2,10 @@
 
 Shared Yazelix workflow and release policy live in the main repository:
 
-- https://github.com/luccahuguet/yazelix/blob/main/AGENTS.md
+- https://github.com/Yazelix/nova/blob/main/AGENTS.md
 - In sibling local checkouts, read `../yazelix/AGENTS.md` first.
 
-Only Yazelix Helix-specific guidance belongs here.
+Only Nova Helix-specific guidance belongs here.
 
 ## Local Scope
 
