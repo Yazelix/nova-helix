@@ -47,7 +47,8 @@ Measured against the pinned upstream Steel tip and excluding documentation:
 | Native transport seam | 384 | 0 | +384 |
 | Native transport tests | 167 | 0 | +167 |
 | Focused CI workflow | 47 | 0 | +47 |
-| **Total** | **758** | **4** | **+754** |
+| Steel component layering | 174 | 60 | +114 |
+| **Total** | **932** | **64** | **+868** |
 
 ## Upstream Helix README
 

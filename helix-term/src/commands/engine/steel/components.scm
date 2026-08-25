@@ -217,8 +217,8 @@
 ;;    This is a function that will get called with each frame. The first argument is the state object provided,
 ;;    and the second is the `Rect?` to render against, ultimately against the `Buffer?`.
 ;;
-;;function-map : (hashof string? function?)
-;;    This is a hashmap of strings -> function that contains a few important functions:
+;;function-map : (hashof string? any?)
+;;    This hashmap contains a few optional component behaviors:
 ;;
 ;;    "handle_event" : (-> state? Event?) -> SteelEventResult?
 ;;
@@ -232,9 +232,15 @@
 ;;
 ;;        See the associated docs for those to understand the implications for each.
 ;;
-;;    "cursor" : (-> state? Rect?) -> Position?
+;;    "event_priority" : bool?
 ;;
-;;        This tells helix where to put the cursor.
+;;        When #t, handle events before ordinary components while preserving normal
+;;        front-to-back order among other priority components.
+;;
+;;    "cursor" : (-> state? Rect?) -> (or Position? #false (list (or Position? #false) symbol?))
+;;
+;;        This tells helix where to put the cursor. The list form also selects
+;;        block, hidden, bar, or underline cursor rendering.
 ;;
 ;;    "required_size": (-> state? (pair? int?)) -> (pair? int?)
 ;;

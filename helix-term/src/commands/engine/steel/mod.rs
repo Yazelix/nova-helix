@@ -3316,6 +3316,14 @@ impl Component for BoxDynComponent {
         self.inner.should_update()
     }
 
+    fn event_priority(&self) -> bool {
+        self.inner.event_priority()
+    }
+
+    fn ignores_editor_clipping(&self) -> bool {
+        self.inner.ignores_editor_clipping()
+    }
+
     fn cursor(
         &self,
         _area: helix_view::graphics::Rect,
@@ -4901,7 +4909,7 @@ fn pop_last_component_by_name(cx: &mut Context, name: SteelString) {
     let callback = async move {
         let call: Box<LocalJobCallback> = Box::new(
             move |_editor: &mut Editor, compositor: &mut Compositor, _jobs: &mut job::Jobs| {
-                compositor.remove_by_dynamic_name(&name);
+                compositor.remove_last_by_dynamic_name(&name);
             },
         );
         Ok(call)

@@ -27,11 +27,13 @@ Commands:
 * Add `--config-dir <path>` to override the Helix configuration directory independently of `--config`.
 * Provide Steel actions that open files or a directory picker in the current Helix instance while setting its managed workspace.
 * Compose the loopback transport and Steel actions with required payload validation and a caller-provided token.
+* Allow a Steel component to opt into priority event handling with `"event_priority"`.
 * Provide an authenticated, bounded loopback transport that hands one schema-2 request per connection to a Steel handler on Helix's editor thread and stops cleanly with its engine.
 
 Fixes:
 
 * Restore Elvish completion after ordinary arguments and for `--log` paths.
+* Keep native overlays inside the editor's clipped area, remove closing Steel components by name instead of popping an unrelated top layer, and keep stale generations from removing their replacements.
 
 Packaging:
 

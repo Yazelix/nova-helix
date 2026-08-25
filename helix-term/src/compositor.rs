@@ -18,7 +18,7 @@ pub enum EventResult {
 
 use crate::job::Jobs;
 use crate::ui::picker;
-use helix_view::Editor;
+use helix_view::{editor::ClippingConfiguration, Editor};
 
 pub use helix_view::input::Event;
 
@@ -48,6 +48,16 @@ pub trait Component: Any + AnyComponent {
     /// Should redraw? Useful for saving redraw cycles if we know component didn't change.
     fn should_update(&self) -> bool {
         true
+    }
+
+    /// Handle events before ordinary front-to-back layer dispatch.
+    fn event_priority(&self) -> bool {
+        false
+    }
+
+    /// Render against the full terminal instead of the editor's clipped area.
+    fn ignores_editor_clipping(&self) -> bool {
+        false
     }
 
     /// Render the component onto the provided surface.
@@ -141,11 +151,21 @@ impl Compositor {
         Some(self.layers.remove(idx))
     }
 
-    pub fn remove_by_dynamic_name(&mut self, id: &str) -> Option<Box<dyn Component>> {
+    /// Remove the backmost match, used to discard an older stale generation.
+    pub fn remove_first_by_dynamic_name(&mut self, id: &str) -> Option<Box<dyn Component>> {
         let idx = self
             .layers
             .iter()
             .position(|layer| layer.name() == Some(id))?;
+        Some(self.layers.remove(idx))
+    }
+
+    /// Remove the frontmost match, used by normal component close operations.
+    pub fn remove_last_by_dynamic_name(&mut self, id: &str) -> Option<Box<dyn Component>> {
+        let idx = self
+            .layers
+            .iter()
+            .rposition(|layer| layer.name() == Some(id))?;
         Some(self.layers.remove(idx))
     }
 
@@ -167,29 +187,31 @@ impl Compositor {
         let mut callbacks = Vec::new();
         let mut consumed = false;
 
-        // propagate events through the layers until we either find a layer that consumes it or we
-        // run out of layers (event bubbling), starting at the front layer and then moving to the
-        // background.
-        for layer in self.layers.iter_mut().rev() {
-            match layer.handle_event(event, cx) {
-                EventResult::Consumed(Some(callback)) => {
-                    callbacks.push(callback);
-                    consumed = true;
-                    break;
-                }
-                EventResult::Consumed(None) => {
-                    consumed = true;
-                    break;
-                }
-                // Swallow the event, but don't trigger a re-render
-                EventResult::ConsumedWithoutRerender => {
-                    break;
-                }
-                EventResult::Ignored(Some(callback)) => {
-                    callbacks.push(callback);
-                }
-                EventResult::Ignored(None) => {}
-            };
+        // Priority listeners get first refusal. Within each pass, preserve the normal
+        // front-to-back event bubbling order.
+        'layers: for priority in [true, false] {
+            for layer in self
+                .layers
+                .iter_mut()
+                .rev()
+                .filter(|layer| layer.event_priority() == priority)
+            {
+                match layer.handle_event(event, cx) {
+                    EventResult::Consumed(Some(callback)) => {
+                        callbacks.push(callback);
+                        consumed = true;
+                        break 'layers;
+                    }
+                    EventResult::Consumed(None) => {
+                        consumed = true;
+                        break 'layers;
+                    }
+                    // Swallow the event, but don't trigger a re-render
+                    EventResult::ConsumedWithoutRerender => break 'layers,
+                    EventResult::Ignored(Some(callback)) => callbacks.push(callback),
+                    EventResult::Ignored(None) => {}
+                };
+            }
         }
 
         for callback in callbacks {
@@ -200,15 +222,27 @@ impl Compositor {
     }
 
     pub fn render(&mut self, area: Rect, surface: &mut Surface, cx: &mut Context) {
+        let editor_area = clipped_editor_area(area, &cx.editor.editor_clipping);
         for layer in &mut self.layers {
             if layer.should_update() {
+                let area = if layer.ignores_editor_clipping() {
+                    area
+                } else {
+                    editor_area
+                };
                 layer.render(area, surface, cx)
             };
         }
     }
 
     pub fn cursor(&self, area: Rect, editor: &Editor) -> (Option<Position>, CursorKind) {
+        let editor_area = clipped_editor_area(area, &editor.editor_clipping);
         for layer in self.layers.iter().rev() {
+            let area = if layer.ignores_editor_clipping() {
+                area
+            } else {
+                editor_area
+            };
             if let (Some(pos), kind) = layer.cursor(area, editor) {
                 return (Some(pos), kind);
             }
@@ -243,6 +277,79 @@ impl Compositor {
 
     pub fn layer_count(&self) -> usize {
         self.layers.len()
+    }
+}
+
+fn clipped_editor_area(mut area: Rect, clipping: &ClippingConfiguration) -> Rect {
+    if let Some(top) = clipping.top {
+        area = area.clip_top(top);
+    }
+    if let Some(bottom) = clipping.bottom {
+        area = area.clip_bottom(bottom);
+    }
+    if let Some(left) = clipping.left {
+        area = area.clip_left(left);
+    }
+    if let Some(right) = clipping.right {
+        area = area.clip_right(right);
+    }
+    area
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    struct NamedComponent(&'static str, usize);
+
+    impl Component for NamedComponent {
+        fn name(&self) -> Option<&str> {
+            Some(self.0)
+        }
+
+        fn render(&mut self, _area: Rect, _frame: &mut Surface, _ctx: &mut Context) {}
+    }
+
+    #[test]
+    fn editor_area_applies_every_clip_edge() {
+        let clipping = ClippingConfiguration {
+            top: Some(1),
+            bottom: Some(2),
+            left: Some(3),
+            right: Some(4),
+        };
+
+        assert_eq!(
+            clipped_editor_area(Rect::new(1, 2, 20, 10), &clipping),
+            Rect::new(4, 3, 13, 7)
+        );
+    }
+
+    #[test]
+    fn named_removal_distinguishes_stale_and_frontmost_components() {
+        let mut compositor = Compositor::new(Rect::default());
+        compositor.push(Box::new(NamedComponent("same", 1)));
+        compositor.push(Box::new(NamedComponent("same", 2)));
+
+        let stale = compositor
+            .remove_first_by_dynamic_name("same")
+            .unwrap()
+            .as_boxed_any()
+            .downcast::<NamedComponent>()
+            .ok()
+            .unwrap();
+        assert_eq!(stale.1, 1);
+
+        compositor.push(Box::new(NamedComponent("same", 3)));
+        let frontmost = compositor
+            .remove_last_by_dynamic_name("same")
+            .unwrap()
+            .as_boxed_any()
+            .downcast::<NamedComponent>()
+            .ok()
+            .unwrap();
+
+        assert_eq!(frontmost.1, 3);
     }
 }
 

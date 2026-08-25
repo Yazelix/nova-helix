@@ -806,6 +806,7 @@ pub struct SteelDynamicComponent {
     render: SteelVal,
     cursor: Option<SteelVal>,
     required_size: Option<SteelVal>,
+    event_priority: bool,
 
     // Cached key event; we keep this around so that when sending
     // events to the event handler, we can reuse the heap allocation
@@ -840,6 +841,7 @@ impl SteelDynamicComponent {
             _should_update: h.get("should_update").cloned(),
             cursor: h.get("cursor").cloned(),
             required_size: h.get("required_size").cloned(),
+            event_priority: matches!(h.get("event_priority"), Some(SteelVal::BoolV(true))),
             key_event: None,
             _roots: roots,
             generation: load_generation(),
@@ -857,6 +859,12 @@ impl SteelDynamicComponent {
         WrappedDynComponent {
             inner: Some(Box::new(s)),
         }
+    }
+
+    fn remove_frontmost_callback(name: String) -> compositor::Callback {
+        Box::new(move |compositor, _| {
+            compositor.remove_last_by_dynamic_name(&name);
+        })
     }
 }
 
@@ -878,6 +886,14 @@ impl Custom for SteelEventResult {}
 impl Component for SteelDynamicComponent {
     fn name(&self) -> Option<&str> {
         Some(&self.name)
+    }
+
+    fn event_priority(&self) -> bool {
+        self.event_priority
+    }
+
+    fn ignores_editor_clipping(&self) -> bool {
+        true
     }
 
     fn render(
@@ -927,7 +943,7 @@ impl Component for SteelDynamicComponent {
                     guard,
                     e,
                     move |compositor| {
-                        compositor.remove_by_dynamic_name(&name);
+                        compositor.remove_last_by_dynamic_name(&name);
                     },
                 );
             }
@@ -941,11 +957,10 @@ impl Component for SteelDynamicComponent {
     ) -> compositor::EventResult {
         // Ignore this event off the stack
         if !is_current_generation(self.generation) {
-            return compositor::EventResult::Ignored(Some(Box::new(
-                |compositor: &mut compositor::Compositor, _| {
-                    compositor.pop();
-                },
-            )));
+            let name = self.name.clone();
+            return compositor::EventResult::Ignored(Some(Box::new(move |compositor, _| {
+                compositor.remove_first_by_dynamic_name(&name);
+            })));
         }
 
         if let Some(handle_event) = &mut self.handle_event {
@@ -992,10 +1007,7 @@ impl Component for SteelDynamicComponent {
 
                     match value {
                         Ok(SteelEventResult::Close) => compositor::EventResult::Consumed(Some(
-                            Box::new(|compositor: &mut compositor::Compositor, _| {
-                                // remove the layer
-                                compositor.pop();
-                            }),
+                            Self::remove_frontmost_callback(self.name.clone()),
                         )),
                         Ok(SteelEventResult::Consumed) => compositor::EventResult::Consumed(None),
                         Ok(SteelEventResult::ConsumedWithoutRerender) => {
@@ -1003,10 +1015,7 @@ impl Component for SteelDynamicComponent {
                         }
                         Ok(SteelEventResult::Ignored) => compositor::EventResult::Ignored(None),
                         Ok(SteelEventResult::IgnoreAndClose) => compositor::EventResult::Ignored(
-                            Some(Box::new(|compositor: &mut compositor::Compositor, _| {
-                                // remove the layer
-                                compositor.pop();
-                            })),
+                            Some(Self::remove_frontmost_callback(self.name.clone())),
                         ),
                         _ => compositor::EventResult::Ignored(None),
                     }
