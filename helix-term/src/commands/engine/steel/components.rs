@@ -233,7 +233,7 @@ fn push_status_elem(
     cfg.store_config(app_config);
     Ok(())
 }
-pub fn helix_component_module(generate_sources: bool) -> BuiltInModule {
+pub fn helix_component_module(generate_sources: bool) -> (BuiltInModule, String) {
     let mut module = BuiltInModule::new("helix/components");
 
     let mut builtin_components_module = include_str!("components.scm").to_string();
@@ -764,7 +764,7 @@ event: Event?"#, $name, $name));
         configure_lsp_builtins("component", &module);
     }
 
-    module
+    (module, builtin_components_module)
 }
 
 fn buffer_set_string(
@@ -797,7 +797,7 @@ fn buffer_set_string(
 
 /// A dynamic component, used for rendering
 pub struct SteelDynamicComponent {
-    name: String,
+    name: SteelString,
     // This _should_ be a struct, but in theory can be whatever you want. It will be the first argument
     // passed to the functions in the remainder of the struct.
     state: SteelVal,
@@ -822,7 +822,7 @@ pub struct SteelDynamicComponent {
 
 impl SteelDynamicComponent {
     pub fn new(
-        name: String,
+        name: SteelString,
         state: SteelVal,
         render: SteelVal,
         h: HashMap<String, SteelVal>,
@@ -849,7 +849,7 @@ impl SteelDynamicComponent {
     }
 
     pub fn new_dyn(
-        name: String,
+        name: SteelString,
         state: SteelVal,
         render: SteelVal,
         h: HashMap<String, SteelVal>,
@@ -859,12 +859,6 @@ impl SteelDynamicComponent {
         WrappedDynComponent {
             inner: Some(Box::new(s)),
         }
-    }
-
-    fn remove_frontmost_callback(name: String) -> compositor::Callback {
-        Box::new(move |compositor, _| {
-            compositor.remove_last_by_dynamic_name(&name);
-        })
     }
 }
 
@@ -943,7 +937,7 @@ impl Component for SteelDynamicComponent {
                     guard,
                     e,
                     move |compositor| {
-                        compositor.remove_last_by_dynamic_name(&name);
+                        compositor.remove_by_dynamic_name(&name);
                     },
                 );
             }
@@ -1006,17 +1000,31 @@ impl Component for SteelDynamicComponent {
                     let value = SteelEventResult::from_steelval(&v);
 
                     match value {
-                        Ok(SteelEventResult::Close) => compositor::EventResult::Consumed(Some(
-                            Self::remove_frontmost_callback(self.name.clone()),
-                        )),
+                        Ok(SteelEventResult::Close) => {
+                            let name = self.name.clone();
+
+                            compositor::EventResult::Consumed(Some(Box::new(
+                                move |compositor: &mut compositor::Compositor, _| {
+                                    // remove the layer
+                                    compositor.remove_by_dynamic_name(&name);
+                                },
+                            )))
+                        }
                         Ok(SteelEventResult::Consumed) => compositor::EventResult::Consumed(None),
                         Ok(SteelEventResult::ConsumedWithoutRerender) => {
                             compositor::EventResult::ConsumedWithoutRerender
                         }
                         Ok(SteelEventResult::Ignored) => compositor::EventResult::Ignored(None),
-                        Ok(SteelEventResult::IgnoreAndClose) => compositor::EventResult::Ignored(
-                            Some(Self::remove_frontmost_callback(self.name.clone())),
-                        ),
+                        Ok(SteelEventResult::IgnoreAndClose) => {
+                            let name = self.name.clone();
+
+                            compositor::EventResult::Ignored(Some(Box::new(
+                                move |compositor: &mut compositor::Compositor, _| {
+                                    // remove the layer
+                                    compositor.remove_by_dynamic_name(&name);
+                                },
+                            )))
+                        }
                         _ => compositor::EventResult::Ignored(None),
                     }
                 }

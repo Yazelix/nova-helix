@@ -31,9 +31,13 @@ compilation, native transport behavior, filesystem-backed Steel composition,
 optional-feature compilation, and formatting. Superseded runs are cancelled,
 the job has a 30-minute timeout, and it publishes no artifacts or grammar cache.
 
+The standalone flake pins Nixpkgs at `f830e6112b`, the upstream change that
+uses crates.io's static CDN. Nova consumers make this input follow Nova's root
+Nixpkgs instead.
+
 ## Downstream LOC Scorecard
 
-Measured against the pinned upstream Steel tip and excluding documentation:
+Measured against upstream Steel tip `5a8635be` and excluding documentation:
 
 | Surface | Added | Removed | Net |
 | --- | ---: | ---: | ---: |
@@ -47,8 +51,8 @@ Measured against the pinned upstream Steel tip and excluding documentation:
 | Native transport seam | 384 | 0 | +384 |
 | Native transport tests | 167 | 0 | +167 |
 | Focused CI workflow | 47 | 0 | +47 |
-| Steel component layering | 174 | 60 | +114 |
-| **Total** | **932** | **64** | **+868** |
+| Steel component layering | 161 | 50 | +111 |
+| **Total** | **919** | **54** | **+865** |
 
 ## Upstream Helix README
 

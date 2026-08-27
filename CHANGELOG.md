@@ -33,12 +33,13 @@ Commands:
 Fixes:
 
 * Restore Elvish completion after ordinary arguments and for `--log` paths.
-* Keep native overlays inside the editor's clipped area, remove closing Steel components by name instead of popping an unrelated top layer, and keep stale generations from removing their replacements.
+* Keep native overlays inside the editor's clipped area, let persistent Steel components render across that area and receive priority events, and keep stale generations from removing their replacements.
 
 Packaging:
 
 * Export the Steel-enabled editor as `packages.<system>.yazelix_helix` for Yazelix consumers.
 * Export the isolated Steel bridge modules as `packages.<system>.yazelix_helix_steel`.
+* Pin standalone Nix builds to the upstream Nixpkgs crates.io CDN fix.
 
 # 25.07.1 (2025-07-18)
 

@@ -549,7 +549,11 @@ fn add_reverse_mapping(key: usize, label: String) {
 }
 
 fn load_component_api(engine: &mut Engine, generate_sources: bool) {
-    let module = helix_component_module(generate_sources);
+    let (module, builtin_components_module) = helix_component_module(generate_sources);
+    engine.register_steel_module(
+        "helix/components.scm".to_string(),
+        builtin_components_module,
+    );
     engine.register_module(module);
 }
 
@@ -1327,6 +1331,7 @@ fn load_theme_api(engine: &mut Engine, generate_sources: bool) {
         .register_fn("add-theme!", add_theme)
         .register_fn("theme-style", get_style)
         .register_fn("theme-set-style!", set_style)
+        .register_fn("theme-set-name!", set_theme_name)
         .register_fn("string->color", string_to_color)
         .register_fn_with_ctx(CTX, "get-theme", get_theme)
         .register_fn_with_ctx(CTX, "current-theme", current_theme)
@@ -1411,6 +1416,12 @@ fn set_style(theme: &mut SteelTheme, name: String, style: helix_view::theme::Sty
     theme.0.set(name, style)
 }
 
+// Rename a cloned theme so it registers under a fresh name. Otherwise load()
+// would shadow it with the on-disk theme of the same name.
+fn set_theme_name(theme: &mut SteelTheme, name: String) {
+    theme.0.set_name(name)
+}
+
 fn string_to_color(string: SteelString) -> Result<Color, anyhow::Error> {
     // TODO: Don't expose this directly
     helix_view::theme::ThemePalette::string_to_rgb(string.as_str()).map_err(anyhow::Error::msg)
@@ -1478,28 +1489,70 @@ fn load_editor_api(engine: &mut Engine, generate_sources: bool) {
                 cx.editor.documents.get(&doc).map(|x| x.is_modified())
             },
         )
+        // Counts of the document's own diagnostics by severity, as (hints info warnings errors).
+        // Mirrors the fold in helix-term/src/ui/statusline.rs::render_diagnostics.
+        .register_fn_with_ctx(
+            CTX,
+            "editor-document-diagnostic-counts",
+            |cx: &mut Context, doc: DocumentId| -> Option<Vec<usize>> {
+                cx.editor.documents.get(&doc).map(|document| {
+                    let counts =
+                        document
+                            .diagnostics()
+                            .iter()
+                            .fold((0, 0, 0, 0), |mut counts, diag| {
+                                match diag.severity {
+                                    Some(Severity::Hint) | None => counts.0 += 1,
+                                    Some(Severity::Info) => counts.1 += 1,
+                                    Some(Severity::Warning) => counts.2 += 1,
+                                    Some(Severity::Error) => counts.3 += 1,
+                                }
+                                counts
+                            });
+                    vec![counts.0, counts.1, counts.2, counts.3]
+                })
+            },
+        )
         .register_fn_with_ctx(
             CTX,
             "editor-document-reload",
             |cx: &mut Context, doc: DocumentId| -> anyhow::Result<()> {
-                let path = cx
+                let scrolloff = cx.editor.config().scrolloff;
+                let focused_view_id = view!(cx.editor).id;
+
+                let (path, view_ids) = {
+                    let Some(x) = cx.editor.documents.get_mut(&doc) else {
+                        return Ok(());
+                    };
+
+                    let mut view_ids: Vec<_> = x.selections().keys().copied().collect();
+                    if view_ids.is_empty() {
+                        x.ensure_view_init(focused_view_id);
+                        view_ids.push(focused_view_id);
+                    }
+
+                    (x.path().map(|path| path.to_path_buf()), view_ids)
+                };
+
+                let x = doc_mut!(cx.editor, &doc);
+                let view = view_mut!(cx.editor, view_ids[0]);
+                view.sync_changes(x);
+
+                let trust_full = cx
                     .editor
-                    .documents
-                    .get(&doc)
-                    .and_then(|x| x.path().map(|x| x.to_path_buf()));
+                    .workspace_trust
+                    .query(
+                        x.workspace_root(),
+                        helix_loader::workspace_trust::TrustQuery::Git,
+                    )
+                    .is_trusted();
+                x.reload(view, &cx.editor.diff_providers, trust_full)?;
 
-                for (view, _) in cx.editor.tree.views_mut() {
-                    if let Some(x) = cx.editor.documents.get_mut(&doc) {
-                        let trust_full = cx
-                            .editor
-                            .workspace_trust
-                            .query(
-                                x.workspace_root(),
-                                helix_loader::workspace_trust::TrustQuery::Git,
-                            )
-                            .is_trusted();
-
-                        x.reload(view, &cx.editor.diff_providers, trust_full)?;
+                for view_id in view_ids {
+                    let view = view_mut!(cx.editor, view_id);
+                    if view.doc == doc {
+                        view.sync_changes(x);
+                        view.ensure_cursor_in_view(x, scrolloff);
                     }
                 }
                 if let Some(path) = path {
@@ -4909,7 +4962,7 @@ fn pop_last_component_by_name(cx: &mut Context, name: SteelString) {
     let callback = async move {
         let call: Box<LocalJobCallback> = Box::new(
             move |_editor: &mut Editor, compositor: &mut Compositor, _jobs: &mut job::Jobs| {
-                compositor.remove_last_by_dynamic_name(&name);
+                compositor.remove_by_dynamic_name(&name);
             },
         );
         Ok(call)

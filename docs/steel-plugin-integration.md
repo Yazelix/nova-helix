@@ -6,9 +6,9 @@ Yazelix Helix fork for Steel and Helix's Steel maintainers.
 ## Reviewed revisions
 
 - Helix Steel branch:
-  [`8d189f46`](https://github.com/mattwparas/helix/commit/8d189f46e9c620baa685bdfbe39b7c95928475a0)
-- Steel 0.8.2:
-  [`3a418c9e`](https://github.com/mattwparas/steel/commit/3a418c9ea586c1862a8c3a49d6a998436afc8957)
+  [`5a8635be`](https://github.com/mattwparas/helix/commit/5a8635beda77414850a2b9604aa0643e4713db3b)
+- Steel 0.8.3:
+  [`1b785a4e`](https://github.com/mattwparas/steel/commit/1b785a4e9d24e3553b242522b35d4498dae72816)
 
 The Yazelix use case sends an authenticated request from another local process
 to an existing Helix instance. Helix must open files or a directory picker on
@@ -51,7 +51,7 @@ Relevant source:
 
 ## Why the server stayed in Rust
 
-Steel `3a418c9e` provides a useful TCP floor: connect, listen, local-address
+Steel `1b785a4e` provides a useful TCP floor: connect, listen, local-address
 lookup, blocking accept, nonblocking listener and stream modes, stream ports,
 and stream shutdown. Steel also provides native threads, channels, and an
 explicit thread join.

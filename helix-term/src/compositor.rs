@@ -147,7 +147,7 @@ impl Compositor {
         let idx = self
             .layers
             .iter()
-            .position(|layer| layer.id() == Some(id))?;
+            .rposition(|layer| layer.id() == Some(id))?;
         Some(self.layers.remove(idx))
     }
 
@@ -160,8 +160,7 @@ impl Compositor {
         Some(self.layers.remove(idx))
     }
 
-    /// Remove the frontmost match, used by normal component close operations.
-    pub fn remove_last_by_dynamic_name(&mut self, id: &str) -> Option<Box<dyn Component>> {
+    pub fn remove_by_dynamic_name(&mut self, id: &str) -> Option<Box<dyn Component>> {
         let idx = self
             .layers
             .iter()
@@ -342,7 +341,7 @@ mod tests {
 
         compositor.push(Box::new(NamedComponent("same", 3)));
         let frontmost = compositor
-            .remove_last_by_dynamic_name("same")
+            .remove_by_dynamic_name("same")
             .unwrap()
             .as_boxed_any()
             .downcast::<NamedComponent>()
