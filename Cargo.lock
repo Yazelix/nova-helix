@@ -406,7 +406,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3538270d33cc669650c4b093848450d380def10c331d38c768e34cac80576e6e"
 dependencies = [
  "termcolor",
- "unicode-width 0.1.12",
+ "unicode-width 0.1.14",
 ]
 
 [[package]]
@@ -1944,7 +1944,7 @@ dependencies = [
  "tree-house",
  "unicode-general-category",
  "unicode-segmentation",
- "unicode-width 0.1.12",
+ "unicode-width 0.2.2",
 ]
 
 [[package]]
@@ -3860,7 +3860,7 @@ dependencies = [
  "minimad",
  "serde",
  "thiserror",
- "unicode-width 0.1.12",
+ "unicode-width 0.1.14",
 ]
 
 [[package]]
@@ -4168,9 +4168,9 @@ checksum = "c6f5d3c3b1bf09027a88a6bc961fc00497d651009560b5463668dc81b0fa87a8"
 
 [[package]]
 name = "unicode-width"
-version = "0.1.12"
+version = "0.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "68f5e5f3158ecfd4b8ff6fe086db7c8467a2dfdac97fe420f2b7c4aa97af66d6"
+checksum = "7dd6e30e90baa6f72411720665d41d89b9a3d039dc45b8faea1ddd07f617f6af"
 
 [[package]]
 name = "unicode-width"
