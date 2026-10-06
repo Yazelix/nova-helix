@@ -38,20 +38,20 @@ Nixpkgs instead.
 ## Grammar source delivery
 
 `HELIX-GRAMMAR-SOURCES-001`: Nix evaluation and packaged grammar builds do not
-contact Codeberg. `languages.toml` owns grammar URLs, revisions, and subpaths;
-`grammar-sources/<revision>.tar.gz` contains each selected Codeberg source tree,
+contact Codeberg or SourceHut. `languages.toml` owns grammar URLs, revisions, and subpaths;
+`grammar-sources/<revision>.tar.gz` contains each selected source tree,
 unmodified, with its upstream license notices. `hashes.json` records the original
 Nix source NAR hashes. A fixed-output derivation unpacks and verifies each local
 archive at build time. Other hosts retain the upstream fetch path, and standalone
 `hx --grammar fetch` retains upstream behavior.
 
-The nine archives occupy 1,020,213 bytes compressed. They contain third-party
+The ten archives occupy 1,111,782 bytes compressed. They contain third-party
 sources, not maintained parser changes, and are excluded from the Rust source
-build. This replaces evaluation-time Codeberg Git fetches from upstream Steel
+build. This replaces evaluation-time Codeberg and SourceHut Git fetches from upstream Steel
 baseline `5a8635be`; fixed-output network fetchers alone would still require a
-working Codeberg server on a cold build.
+working source server on a cold build.
 
-When changing a Codeberg revision, fetch the exact upstream Git tree, archive it
+When changing a bundled revision, fetch the exact upstream Git tree, archive it
 under a single `source/` directory, and record `nix hash path` for that tree in
 `grammar-sources/hashes.json`. Preserve every file and executable bit, including
 licenses, and remove snapshots no longer referenced by `languages.toml`. Use
@@ -62,7 +62,7 @@ satisfies the same contract.
 
 Run `nix build .#checks.x86_64-linux.codeberg_grammars` (or
 `nix build .#checks.aarch64-darwin.codeberg_grammars` on macOS). The check rejects
-Codeberg network fetches during evaluation and compiles every selected Codeberg
+Codeberg and SourceHut network fetches during evaluation and compiles every bundled
 grammar through the production builder, including grammars with source subpaths.
 Nova runs this check in its existing Linux and Darwin jobs.
 
@@ -83,10 +83,10 @@ Measured against upstream Steel tip `5a8635be` and excluding documentation:
 | Native transport tests | 167 | 0 | +167 |
 | Focused CI workflow | 47 | 0 | +47 |
 | Steel component layering | 161 | 50 | +111 |
-| Pinned grammar source delivery and check | 38 | 1 | +37 |
-| **Total** | **957** | **55** | **+902** |
+| Pinned grammar source delivery and check | 40 | 1 | +39 |
+| **Total** | **959** | **55** | **+904** |
 
-The source-delivery row includes 11 JSON manifest lines. The nine compressed
+The source-delivery row includes 12 JSON manifest lines. The ten compressed
 third-party source archives are counted separately above, not as owned LOC.
 
 ## Upstream Helix README

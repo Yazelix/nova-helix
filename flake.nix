@@ -62,12 +62,13 @@
         codeberg_grammars = pkgs.callPackage (builtins.scopedImport {
           builtins = builtins // {
             fetchTree = args:
-              assert lib.assertMsg (!(args ? url && lib.hasInfix "codeberg.org" args.url))
-                "Grammar evaluation must not fetch Codeberg.";
+              assert lib.assertMsg (!(args ? url && lib.any (host: lib.hasInfix host args.url) ["codeberg.org" "git.sr.ht"]))
+                "Grammar evaluation must not fetch Codeberg or SourceHut.";
               builtins.fetchTree args;
           };
         } ./grammars.nix) {
-          includeGrammarIf = grammar: lib.hasPrefix "https://codeberg.org/" grammar.source.git;
+          includeGrammarIf = grammar:
+            lib.any (host: lib.hasPrefix host grammar.source.git) ["https://codeberg.org/" "https://git.sr.ht/"];
         };
       })
       pkgsFor;
