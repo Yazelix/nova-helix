@@ -45,7 +45,9 @@ Nix source NAR hashes. A fixed-output derivation unpacks and verifies each local
 archive at build time. Other hosts retain the upstream fetch path, and standalone
 `hx --grammar fetch` retains upstream behavior.
 
-The ten archives occupy 1,111,782 bytes compressed. They contain third-party
+The deleted GitHub cylc grammar repository is also bundled.
+
+The eleven archives occupy 1,190,465 bytes compressed. They contain third-party
 sources, not maintained parser changes, and are excluded from the Rust source
 build. This replaces evaluation-time Codeberg and SourceHut Git fetches from upstream Steel
 baseline `5a8635be`; fixed-output network fetchers alone would still require a
@@ -83,10 +85,10 @@ Measured against upstream Steel tip `5a8635be` and excluding documentation:
 | Native transport tests | 167 | 0 | +167 |
 | Focused CI workflow | 47 | 0 | +47 |
 | Steel component layering | 161 | 50 | +111 |
-| Pinned grammar source delivery and check | 40 | 1 | +39 |
-| **Total** | **959** | **55** | **+904** |
+| Pinned grammar source delivery and check | 42 | 1 | +41 |
+| **Total** | **961** | **55** | **+906** |
 
-The source-delivery row includes 12 JSON manifest lines. The ten compressed
+The source-delivery row includes 13 JSON manifest lines. The eleven compressed
 third-party source archives are counted separately above, not as owned LOC.
 
 ## Upstream Helix README

@@ -37,6 +37,7 @@ Fixes:
 
 Packaging:
 
+* Bundle the pinned cylc grammar source after its GitHub repository was deleted, preserving syntax support on fresh Nix installs.
 * Export the Steel-enabled editor as `packages.<system>.yazelix_helix` for Yazelix consumers.
 * Export the isolated Steel bridge modules as `packages.<system>.yazelix_helix_steel`.
 * Pin standalone Nix builds to the upstream Nixpkgs crates.io CDN fix.

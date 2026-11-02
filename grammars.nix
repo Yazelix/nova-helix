@@ -47,7 +47,7 @@
       inherit (grammar.source) rev;
     };
     source =
-      if lib.any (host: lib.hasPrefix host grammar.source.git) ["https://codeberg.org/" "https://git.sr.ht/"]
+      if bundledSourceHashes ? ${grammar.source.rev} || lib.any (host: lib.hasPrefix host grammar.source.git) ["https://codeberg.org/" "https://git.sr.ht/"]
       then let
         archive = ./grammar-sources + "/${grammar.source.rev}.tar.gz";
       in

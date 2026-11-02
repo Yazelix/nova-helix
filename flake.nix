@@ -68,7 +68,8 @@
           };
         } ./grammars.nix) {
           includeGrammarIf = grammar:
-            lib.any (host: lib.hasPrefix host grammar.source.git) ["https://codeberg.org/" "https://git.sr.ht/"];
+            builtins.hasAttr grammar.source.rev (builtins.fromJSON (builtins.readFile ./grammar-sources/hashes.json))
+            || lib.any (host: lib.hasPrefix host grammar.source.git) ["https://codeberg.org/" "https://git.sr.ht/"];
         };
       })
       pkgsFor;
