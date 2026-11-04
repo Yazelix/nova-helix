@@ -1,13 +1,1162 @@
 {
-  "06587ea641155db638f46a32c959d68796cd36bb": "sha256-Em9uodgqj1TXyZieLuwrYouth5r4UvZoBFSSbzAqJE0=",
-  "07035a248943575444aa0b893ffe306e1444c0ab": "sha256-mONAnzm2YLeTvefeeRfrBVeaPhv/qnepZRIw9n0CUfI=",
-  "21a3a3929facb964b3592daeb69119294ff84cf2": "sha256-2Z0CDtLOZ7LWffFboxO+tE0VWEkzNNodFMXr5PHQkoo=",
-  "3dfa6758d4c15832d051f933101992b9e01d6611": "sha256-h2a+ievbZGAYFVl3aZxM4/zTn92/fnfxelHWKfnXoP8=",
-  "5eddbfdbec4c893182c79047499901c196332e78": "sha256-ax9MlBuat3SmYJE5lkuTSula0A/RKoHljSqi9UZ2wO8=",
-  "6d1d81137112299324b526477ce1db989ab58fb8": "sha256-jgQCTM36S8UwSyT4LAfcX4DUIl2OYVMeQdDg3zRrw00=",
-  "7741807092c4009c1fe4c3648da60ca72b1b80f1": "sha256-fMtGQsEbZHNIamrz3hoGvCJn5Dtu0oHhuLmMxOjFhGU=",
-  "996aaabea9a9fbe498ae0876356028a78e6ef8db": "sha256-2Re/9TXRNLVmbq7iAFVgTj4Xt1P1yXjlWaLdNHC8ePU=",
-  "ad3da4e8f7fd72dcc5e93a6b89822c59a7cd10ff": "sha256-ag8xIRd66owaOMjH05eqZtRRYhViWP/OkLX3cWP1BJU=",
-  "b667c8cab109df307e1b4d56b0b43f5c4a353533": "sha256-fP1c2F/nn4BsmO1u0JAGbECQfv0J9TCZWqiwu6W+JvM=",
-  "d8d415f6a1cf80ca138524bcc395810b176d40fa": "sha256-SEqqmkfV/wsr1ObcBN5My29RY9TWfxnQlsnEEIZyR18="
+  "001c28d7a29832b06b0e831ec77845553c89b56d": {
+    "hash": "sha256-cUjbN+e8UtoLRm8ZnxG7iRGD5YIc032RbHBIlmV8aLc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/001c28d7a29832b06b0e831ec77845553c89b56d.tar.gz"
+  },
+  "02150524228b1e6afef96949f2d6b7cc0aaf999e": {
+    "hash": "sha256-wosqwiDkK1rytGWMJApz1M42Sme9OaWXC0rmj7vM4g8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/02150524228b1e6afef96949f2d6b7cc0aaf999e.tar.gz"
+  },
+  "042119eca2e18a60e56317fb06ee3ba5c32cb447": {
+    "hash": "sha256-jqpY3g19YzX5T2rD4EFUAs594XrUdmk5DjkgGO6MC2g=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/042119eca2e18a60e56317fb06ee3ba5c32cb447.tar.gz"
+  },
+  "048fe686cb1fde267243739b8bdbec8fc3a55272": {
+    "hash": "sha256-tv78h5m5g+O16i6ZkQX4Ozh5pM47Xd7wCc3Owo3awzs=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/048fe686cb1fde267243739b8bdbec8fc3a55272.tar.gz"
+  },
+  "06587ea641155db638f46a32c959d68796cd36bb": {
+    "hash": "sha256-Em9uodgqj1TXyZieLuwrYouth5r4UvZoBFSSbzAqJE0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/06587ea641155db638f46a32c959d68796cd36bb.tar.gz"
+  },
+  "07035a248943575444aa0b893ffe306e1444c0ab": {
+    "hash": "sha256-mONAnzm2YLeTvefeeRfrBVeaPhv/qnepZRIw9n0CUfI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/07035a248943575444aa0b893ffe306e1444c0ab.tar.gz"
+  },
+  "0975ef72fc3c47b530309ca93937d7d143523628": {
+    "hash": "sha256-0wmdbXHZbHkv4pTrB1fCbExx9E83l+zaocGa+SvQsZQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0975ef72fc3c47b530309ca93937d7d143523628.tar.gz"
+  },
+  "09e158cd3650581c0af4c49c2e5b10c4834c8646": {
+    "hash": "sha256-bdT7LZ2x7BdUqLJRq4ENJTaIFnciac7l2dCxOSB09CI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/09e158cd3650581c0af4c49c2e5b10c4834c8646.tar.gz"
+  },
+  "0a8910f293268e27ff554357c229ba172b0eaed2": {
+    "hash": "sha256-QFAkxQo2w/+OR7nZn9ldBk2yHOd23kzciAcQvIZ5hrY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0a8910f293268e27ff554357c229ba172b0eaed2.tar.gz"
+  },
+  "0a917207f65ba3e3acfa9cda16142ee39c4c1aaa": {
+    "hash": "sha256-xivgajrM0sqbEcX+ZN0h5C+s7KJVJanrvxRQ/j1VNIQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0a917207f65ba3e3acfa9cda16142ee39c4c1aaa.tar.gz"
+  },
+  "0afd9a6d808944e65a7be393e31868b85345735f": {
+    "hash": "sha256-QXwijdfVay4PH0yKmWuMUnqqInir2yjJZjHxZQTYRxE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0afd9a6d808944e65a7be393e31868b85345735f.tar.gz"
+  },
+  "0b215fe75bdeb8368546e3cee36aca8c19212d06": {
+    "hash": "sha256-L0FJpQsiMvPxZOGvp5kfStTPRc5Zgr8xMUj06Yp6VGU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0b215fe75bdeb8368546e3cee36aca8c19212d06.tar.gz"
+  },
+  "0b2b25bcaa7d4925d5f0dda16f6a99c588a437f1": {
+    "hash": "sha256-Hf8LfrN3YjN9hpGtTVmK3ZjJ/b/fsRCg9FG7hSSj/mk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0b2b25bcaa7d4925d5f0dda16f6a99c588a437f1.tar.gz"
+  },
+  "0c066107e3548de79316a6a4ec771e2f7cf7c468": {
+    "hash": "sha256-fQq5agJ/xHsWxEJAydGxED4Z0bmREfXJ1t/EspBkYC8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0c066107e3548de79316a6a4ec771e2f7cf7c468.tar.gz"
+  },
+  "0d01fcdae5a53191df5b1349f9bce053833270e7": {
+    "hash": "sha256-pnQ5pUDlpMJot7w2OQkXsYOzSAuiygFITPeGJ6VrKKs=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0d01fcdae5a53191df5b1349f9bce053833270e7.tar.gz"
+  },
+  "0e36bed171768908f331ff7dff9d956bae016efb": {
+    "hash": "sha256-bpiT3FraOZhJaoiFWAoVJX1O+plnIi8aXOW2LwyU23M=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0e36bed171768908f331ff7dff9d956bae016efb.tar.gz"
+  },
+  "0e6ef7741712c09dc3ee6e81c42e919820cc65ef": {
+    "hash": "sha256-9T0wjo8i34rvR1g4WBpDFQXQodyv4kNomayGBZK9hfg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0e6ef7741712c09dc3ee6e81c42e919820cc65ef.tar.gz"
+  },
+  "0e9695ae0ede47b8744a8e2ad44d4d40c5d4e4c9": {
+    "hash": "sha256-U+yqSO+vo1RAZrCqCojhY4HwjcjirZU/HgWDCdw3YGw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0e9695ae0ede47b8744a8e2ad44d4d40c5d4e4c9.tar.gz"
+  },
+  "0ee05546d73d8eb64635ed8125de6f35c77759fe": {
+    "hash": "sha256-qXA87soeEdlpzj8svEao8L0F5V14NSZc1WsX9z0PVB0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0ee05546d73d8eb64635ed8125de6f35c77759fe.tar.gz"
+  },
+  "0f010f439e7873db42d3aabae8a48a8f61a89910": {
+    "hash": "sha256-bgOn0CeA/Bc5x20sVLW2IjG83k2QkGtCsvyrwT7kMQ4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0f010f439e7873db42d3aabae8a48a8f61a89910.tar.gz"
+  },
+  "0fbc9f99d5a28865f9de8427fb0672d66f9d83a5": {
+    "hash": "sha256-u1NrtCap+CvhSW4q7xrwiUPGuCspjk9sHKkXQcEXc2E=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/0fbc9f99d5a28865f9de8427fb0672d66f9d83a5.tar.gz"
+  },
+  "107c6d4a420fb0c5962b62ebd9347b7eb0015957": {
+    "hash": "sha256-vEEjHg/qRFfgA8AEWP7hp28/rxBCjPTvxLSMnvlXyi8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/107c6d4a420fb0c5962b62ebd9347b7eb0015957.tar.gz"
+  },
+  "10bacac929ff36a1e8f4056503fe4f8717b21b94": {
+    "hash": "sha256-PSI1XVDGwDk5GjHjvCJfmBDfYM2Gmm1KR4h5KxBR1d0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/10bacac929ff36a1e8f4056503fe4f8717b21b94.tar.gz"
+  },
+  "10fe0054734eec83049514ea2e718b2a56acd0c9": {
+    "hash": "sha256-VzaaN5pj7jMAb/u1fyyH6XmLI+yJpsTlkwpLReTlFNY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/10fe0054734eec83049514ea2e718b2a56acd0c9.tar.gz"
+  },
+  "12d01113e194c8e83f6341aab8c2a5f21db9cac9": {
+    "hash": "sha256-Uhr1DbUK7svhJX1JCtBvKhwO4jgxQLvFPL3mc/zWAy8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/12d01113e194c8e83f6341aab8c2a5f21db9cac9.tar.gz"
+  },
+  "12d98944c1d5077b957cbdb90d663a7c4d50118c": {
+    "hash": "sha256-3cJI6vcbU62kUIhphprNeAl9RyY9TThrzVeArdLfxnI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/12d98944c1d5077b957cbdb90d663a7c4d50118c.tar.gz"
+  },
+  "13863ddcbaa7b68ee6221cea2e3143415e64aea4": {
+    "hash": "sha256-n6RTRMJS3h+g+Wawjb7I9NJbz+w/SGi+DQVj1jiyGaU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/13863ddcbaa7b68ee6221cea2e3143415e64aea4.tar.gz"
+  },
+  "13990f530e8e6709b7978503da9bc8701d366791": {
+    "hash": "sha256-pek2Vg1osMYAdx6DfVdZhuIDb26op3i2cfvMrf5v3xY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/13990f530e8e6709b7978503da9bc8701d366791.tar.gz"
+  },
+  "13e9195370172c86a8b88184cc358b23b677cc46": {
+    "hash": "sha256-Yk1oBv9Flz+QX5tyFZwx0y67I5qgbnLhwYuAvLi9eV8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/13e9195370172c86a8b88184cc358b23b677cc46.tar.gz"
+  },
+  "1436da3946359fcd7ac2d81917aaa78ef1e01755": {
+    "hash": "sha256-Ja79mtXHcZQbs/aPWCaCELWH8RIfeQ35gcRifgIyW/0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/1436da3946359fcd7ac2d81917aaa78ef1e01755.tar.gz"
+  },
+  "1545137aadcc63660c47db9ad98d02fa602655d0": {
+    "hash": "sha256-RkSPoscrinmuSTWHzXkRNaiqECDXpKAbQ4z7a6Tpvek=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/1545137aadcc63660c47db9ad98d02fa602655d0.tar.gz"
+  },
+  "15d3502510af0a6c888c663ec8d6aca8791216ce": {
+    "hash": "sha256-0r1uFIxrc5azpxoP8qNZbs7r/eS0mAV2L7KDu9VIsVo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/15d3502510af0a6c888c663ec8d6aca8791216ce.tar.gz"
+  },
+  "1613b8c85b6ead48464d73668f39910dcbb41911": {
+    "hash": "sha256-HPghz3mOukXrY0KQllOR7Kkl2U3+ukPBrXWKnJCwsqI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/1613b8c85b6ead48464d73668f39910dcbb41911.tar.gz"
+  },
+  "18e44c6da639632a4e42264c7193df34be915f34": {
+    "hash": "sha256-/u1BHMJkj3FkTUwNiB6d8aQIBnnENsBzagXnQa9Dcls=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/18e44c6da639632a4e42264c7193df34be915f34.tar.gz"
+  },
+  "1a44f8d31053096b79c52f10a39da12479edbf64": {
+    "hash": "sha256-S6B2K2eqHktLknpfTATR5fZYE8+W1BvOYTSNTwslSVg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/1a44f8d31053096b79c52f10a39da12479edbf64.tar.gz"
+  },
+  "1f1e782fe2600f50ae57b53876505b8282388d77": {
+    "hash": "sha256-HikAZVoOqKRNnEBv/CCqqyt94HbXg2dBq+4GsmUFSIA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/1f1e782fe2600f50ae57b53876505b8282388d77.tar.gz"
+  },
+  "1f864fb2bf6a87fe1b48545cc6adc6d23090adf7": {
+    "hash": "sha256-bZcEeTv37CvSUa0geSlFX3La3flBi2awbU1RC0hTreM=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/1f864fb2bf6a87fe1b48545cc6adc6d23090adf7.tar.gz"
+  },
+  "1fd627a4e8bff8c24c11987474bd33112bead857": {
+    "hash": "sha256-mJ/bj09mT1WTaiKoXiRXDM7dkenf5hv2ArXieeTVe6I=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/1fd627a4e8bff8c24c11987474bd33112bead857.tar.gz"
+  },
+  "20239395eacdc2e0923a7e5683ad3605aee7b716": {
+    "hash": "sha256-3UfuyJeblQBKjqZvLYyO3GoCvYJp+DvBwQGkR3pFQQ4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/20239395eacdc2e0923a7e5683ad3605aee7b716.tar.gz"
+  },
+  "2199fdf1d302100a53002ea2cf540999119836a0": {
+    "hash": "sha256-aurnBP9R03QN1cDTKpZbp1VX3HCYjleRkSQs6m1aCxA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2199fdf1d302100a53002ea2cf540999119836a0.tar.gz"
+  },
+  "21a3a3929facb964b3592daeb69119294ff84cf2": {
+    "hash": "sha256-2Z0CDtLOZ7LWffFboxO+tE0VWEkzNNodFMXr5PHQkoo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/21a3a3929facb964b3592daeb69119294ff84cf2.tar.gz"
+  },
+  "2346a3ab1bb3857b48b29d779a1ef9799a248cd7": {
+    "hash": "sha256-fifTM/m2Mxd7kpJBlzwWGheAKGq6QbbzyxpBSyplYa0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2346a3ab1bb3857b48b29d779a1ef9799a248cd7.tar.gz"
+  },
+  "235009aad0f580211fc12014bb0846c3910130c1": {
+    "hash": "sha256-Grp1ziaPyMNxoPbsJSiDCiKPXCtWJ/EC/d0OX/jqHF0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/235009aad0f580211fc12014bb0846c3910130c1.tar.gz"
+  },
+  "248b8564567087d7866be76569b182f6dd7e14e9": {
+    "hash": "sha256-1tzvsId57HV4bKyZ5IRdXqhW2c8sc+0CfcsE9WYxz14=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/248b8564567087d7866be76569b182f6dd7e14e9.tar.gz"
+  },
+  "24a6c8ef698e4480fecf8340d771fbcb5de8fbb4": {
+    "hash": "sha256-TjF79WH3bX4nueYr8CbPptkNb2lNkHQNB0VZoMB35Nk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/24a6c8ef698e4480fecf8340d771fbcb5de8fbb4.tar.gz"
+  },
+  "2520c3f934b3179bb540d23e0ef45f75304b5fed": {
+    "hash": "sha256-8rYLNGgoZSvvfqO2++nAgFKmvbkKJ3m+9B8bTXp6Us4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2520c3f934b3179bb540d23e0ef45f75304b5fed.tar.gz"
+  },
+  "272e89ef2aeac74178edb9db4a83c1ffef80a463": {
+    "hash": "sha256-x42qHPwzv3uXVahHE9xYy3RkrYFctJGNEJmu6w1/2Qo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/272e89ef2aeac74178edb9db4a83c1ffef80a463.tar.gz"
+  },
+  "2787d04beadfbe154d3f2da6e98dc45a1b134bbf": {
+    "hash": "sha256-gYEtTjjy8qClYg4+ZnKwNUWMxKTc3sUXQdsVCwB7H6w=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2787d04beadfbe154d3f2da6e98dc45a1b134bbf.tar.gz"
+  },
+  "27af9b74acf89fa6bed4fb8cb8631994fcb2e6f3": {
+    "hash": "sha256-cVlhrAfL8lVHMicJxPqsBZl7NhbfbJXwH8Ga2TQLMc8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/27af9b74acf89fa6bed4fb8cb8631994fcb2e6f3.tar.gz"
+  },
+  "2880b7aab4fb7cc618de1ef3d4c6d93b2396c031": {
+    "hash": "sha256-jXSzFAj+pOIHcfEckHxFBojW7axHI9E0If0UgH3j+Z0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2880b7aab4fb7cc618de1ef3d4c6d93b2396c031.tar.gz"
+  },
+  "293fdc02038ee2bf0e2e206711b69c90ac0d413f": {
+    "hash": "sha256-F5XH21PjPpbwYylgKdwD3MZ5o0amDt4xf/e5UikPcxY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/293fdc02038ee2bf0e2e206711b69c90ac0d413f.tar.gz"
+  },
+  "29b4e49275f4a947ce17c8533bc20a1f97768c70": {
+    "hash": "sha256-vemNtoFr4HDGPtk7ATfBgKQrd1hZ7ndKFMUKc67rXIE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/29b4e49275f4a947ce17c8533bc20a1f97768c70.tar.gz"
+  },
+  "29f9c6707ce9dfc2fc915d175ec720b207f179f3": {
+    "hash": "sha256-ciolUtCf2e7VXmSIR8Zk4fQAGCeHoIQekYi2LVq7Hpg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/29f9c6707ce9dfc2fc915d175ec720b207f179f3.tar.gz"
+  },
+  "2b18fdf9a01e7ec292cc6006724942c81beb7fd5": {
+    "hash": "sha256-lT4gv3PJm6x0GEvQmSHPzkkNA3G0by7AncppDKvpug0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2b18fdf9a01e7ec292cc6006724942c81beb7fd5.tar.gz"
+  },
+  "2c3bb291f497258ba417d052faa14a2dfee6d401": {
+    "hash": "sha256-jLG+DcdVfC2Rj8SYL3WTBWreOLJWwtxpPxzyvJl77d4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2c3bb291f497258ba417d052faa14a2dfee6d401.tar.gz"
+  },
+  "2ca28a9f9d709847bf7a3de0942a84e912f59088": {
+    "hash": "sha256-a1l4RsGpRQfUxEjwewyKiV0G7J2DHZW6+y1HnjREYAs=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2ca28a9f9d709847bf7a3de0942a84e912f59088.tar.gz"
+  },
+  "2e2fa5640268c33c3d3f27f7e676f631a9c68fd9": {
+    "hash": "sha256-IxxUW6YYxP1hkwA9NEojEEE3c8pwvAI6juX8aF7NfMw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2e2fa5640268c33c3d3f27f7e676f631a9c68fd9.tar.gz"
+  },
+  "2ffb90de47417018651fc3b970e5f6b67214dc9d": {
+    "hash": "sha256-wdxCfG48fzswUg4q2pgI4q7jK7ZimpKo4+dRnZsZJ6U=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/2ffb90de47417018651fc3b970e5f6b67214dc9d.tar.gz"
+  },
+  "301b9379ce7dfc8bdbe2c2699a6887dcb73953f9": {
+    "hash": "sha256-f8ldDZD0I/D8IC566bZ4YgQE/b0maTE3BfzuzPfy92k=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/301b9379ce7dfc8bdbe2c2699a6887dcb73953f9.tar.gz"
+  },
+  "32323509b3d9fe96607d151c2da2c9009eb13a2f": {
+    "hash": "sha256-cNGxZXoxhnXGo4yhMHDSjF/j43JNXg1ClpqN2xJgLQU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/32323509b3d9fe96607d151c2da2c9009eb13a2f.tar.gz"
+  },
+  "32686d6b72980b36f876ae2d07719c9c3ed154e2": {
+    "hash": "sha256-+aQNbKWZgmWe21Wv1ih6kuiPDrjgY8ghi6dbQbV3PQg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/32686d6b72980b36f876ae2d07719c9c3ed154e2.tar.gz"
+  },
+  "327b1b821c255867a4fb724c8eee48887e3d014b": {
+    "hash": "sha256-Oj3Z1Zw1geM2jid7xg0041cYtStV+CRl7anXbIIGE5c=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/327b1b821c255867a4fb724c8eee48887e3d014b.tar.gz"
+  },
+  "34bbdc7cce8e803096f47b625979e34c1be38127": {
+    "hash": "sha256-MDfAtG6ZC0KttJ5bdW71Jgts+SAJitRnwu8xQ26N9K0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/34bbdc7cce8e803096f47b625979e34c1be38127.tar.gz"
+  },
+  "355ef84ef8a958ac822117b652cf4d49bac16c79": {
+    "hash": "sha256-+lkDfAL3zKt+NpvHIb1nyHvHkmZ2Ydh78N22ZOeiErs=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/355ef84ef8a958ac822117b652cf4d49bac16c79.tar.gz"
+  },
+  "35a6a3b543e418b7037328261f40e912c767c598": {
+    "hash": "sha256-peKqzEMB1pRKgGqU5DCg5M2wCwFCDyFlcFA5G4VO4u4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/35a6a3b543e418b7037328261f40e912c767c598.tar.gz"
+  },
+  "360ef13f8c609ec6d2e80782af69958b84e36cd0": {
+    "hash": "sha256-d7X1Ubd9tKMQgNHlH+sQxmcsgLWB4mxR5CIdyKkLnM8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/360ef13f8c609ec6d2e80782af69958b84e36cd0.tar.gz"
+  },
+  "3937c5cd105ec4127448651a21aef45f52d19609": {
+    "hash": "sha256-OeAh51rcFTiexAraRzIZUR/A8h9RPwKY7rmtc3ZzoRQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3937c5cd105ec4127448651a21aef45f52d19609.tar.gz"
+  },
+  "39f20bb51f502e32058684e893c0c0b00bb2332c": {
+    "hash": "sha256-YRVxMz9VqZ00bG0tQ/IDxf/8UkK3/OYZTIMxsQfknII=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/39f20bb51f502e32058684e893c0c0b00bb2332c.tar.gz"
+  },
+  "3a38c368e806268daac9923a27e72bcafbbc16bb": {
+    "hash": "sha256-JyH5iBaqW+qylqkZEN+JmG3NkMc5NKGwHp/xJ3NRR2Y=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3a38c368e806268daac9923a27e72bcafbbc16bb.tar.gz"
+  },
+  "3b32474bc29584ea214e4e84b47102408263fe0e": {
+    "hash": "sha256-h8yC+MJIAH7DM69UQ8moJBmcmrSZkxvWrMb+NqtYB2Y=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3b32474bc29584ea214e4e84b47102408263fe0e.tar.gz"
+  },
+  "3b35bd0fded4423c8fb30e9585c7bacbcd0e8095": {
+    "hash": "sha256-mWTOZ3u9VGjEhjDeYJGd8aVxjVG9kJgKX/wHMZSsaEU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3b35bd0fded4423c8fb30e9585c7bacbcd0e8095.tar.gz"
+  },
+  "3c1bdcfff374138da03a1db25c75efce623910fe": {
+    "hash": "sha256-IiL3vi2i+VVKtfd49hz4T+mztj+o2Hxaeo/PAGFBX8Y=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3c1bdcfff374138da03a1db25c75efce623910fe.tar.gz"
+  },
+  "3c97db76d3cdbd002dfba493620c2d5df2fd6fa9": {
+    "hash": "sha256-xveOQpCCkYdeiPkRbFlPNfXOpWW0lzCxfQbxXz+eurM=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3c97db76d3cdbd002dfba493620c2d5df2fd6fa9.tar.gz"
+  },
+  "3cc5e4bdf572d5df4277fc2e54d6299bd59a54b3": {
+    "hash": "sha256-grWpLh5ozSUct5sSI8M8qnWy72b7ruRuhOpoyswvJuU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3cc5e4bdf572d5df4277fc2e54d6299bd59a54b3.tar.gz"
+  },
+  "3d7c53b8038f9ebbb57cd2e61296180aa5c1cf64": {
+    "hash": "sha256-OhhAGOSO+oLazYjjLwqdPDJWC80KLMnCIJvmsJxyNN0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3d7c53b8038f9ebbb57cd2e61296180aa5c1cf64.tar.gz"
+  },
+  "3db655924b2ff1c54fdf6371b5425ea6b5dccefe": {
+    "hash": "sha256-9RX7QMrG8+EZQ5yeYGeAGxRz8wqPP6p1GcSyDY4OvlY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3db655924b2ff1c54fdf6371b5425ea6b5dccefe.tar.gz"
+  },
+  "3dd50808e3096f93dccd5e9dc7dc3dba2eb12dc4": {
+    "hash": "sha256-JOE+ezW6WrwVAtOTz4jnhhPDP3cbQBF38SeweTMMscU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3dd50808e3096f93dccd5e9dc7dc3dba2eb12dc4.tar.gz"
+  },
+  "3dfa6758d4c15832d051f933101992b9e01d6611": {
+    "hash": "sha256-h2a+ievbZGAYFVl3aZxM4/zTn92/fnfxelHWKfnXoP8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3dfa6758d4c15832d051f933101992b9e01d6611.tar.gz"
+  },
+  "3e9c4822ab5cdcccf4f8aa9dcd42117f736d51d9": {
+    "hash": "sha256-8yn/Czv/aNQfa/k8gnr8qeCsuDtU2L2qHGKAMbv8Vgk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3e9c4822ab5cdcccf4f8aa9dcd42117f736d51d9.tar.gz"
+  },
+  "3f0f6b24d599e92460b969aabc4f4c5a914d15a0": {
+    "hash": "sha256-jk9Misdfdso/h/lK/o9FTorK6DbNJPrZs/aw+3r/H1M=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3f0f6b24d599e92460b969aabc4f4c5a914d15a0.tar.gz"
+  },
+  "3f2465c217d0a966d41e584b42d75522f2a3149e": {
+    "hash": "sha256-RV6wHYVTOFdRYMqXdPw2Ryk3FadJJ4jcJVFjsJG8Ri0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/3f2465c217d0a966d41e584b42d75522f2a3149e.tar.gz"
+  },
+  "417cee9abb2053ed26b19e7de972398f2da9b29e": {
+    "hash": "sha256-iylo1e7CjLRZS1Yu4n3wy9cL9BGQ1Ai14TkJVT2Dpuo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/417cee9abb2053ed26b19e7de972398f2da9b29e.tar.gz"
+  },
+  "4313eda8ac31c60e550e3ad5841b100a0a686715": {
+    "hash": "sha256-8rEatsR1vKBOlYYnGW88uwV0xLXGa+/rMAwiUeAuofk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/4313eda8ac31c60e550e3ad5841b100a0a686715.tar.gz"
+  },
+  "43873ee8de16476635b48d52c46f5b6407cb5c09": {
+    "hash": "sha256-6Ywu4HPfgpKsuZ6wo2b1CA3Z+lD+/3XEyJi2l2Q66+Y=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/43873ee8de16476635b48d52c46f5b6407cb5c09.tar.gz"
+  },
+  "444214b31695e9dd4d32fb06247397fb8778a9d2": {
+    "hash": "sha256-3wEuoko0/EpA10JloV9O95zMK+NSqaGV4x59puvT3dE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/444214b31695e9dd4d32fb06247397fb8778a9d2.tar.gz"
+  },
+  "4457145e795b363f072463e697dfe2f6973c9a52": {
+    "hash": "sha256-l4DgThuP9EFU55YQ9lgvVP/8pXojOllQ870gRsBF3FE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/4457145e795b363f072463e697dfe2f6973c9a52.tar.gz"
+  },
+  "47594c5cbef941e6a3ccf4ddb934a68cf4c68075": {
+    "hash": "sha256-Dy/6XxrAUrLwcYTYOhLAU6iZb8c5XgplB/AdZbq0S9c=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/47594c5cbef941e6a3ccf4ddb934a68cf4c68075.tar.gz"
+  },
+  "477e8ba230867b9135deb7af88ea96f160900173": {
+    "hash": "sha256-Z3HILb3TpzkvCG3w5sUiVqXY5XCqkVzGn2BZGTJq5T4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/477e8ba230867b9135deb7af88ea96f160900173.tar.gz"
+  },
+  "48a7c2b6fb9d515577e115e6788937e837815651": {
+    "hash": "sha256-8c/XtnffylxiqX3Q7VFWlrk/655FG2pwqYrftGpnVxI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/48a7c2b6fb9d515577e115e6788937e837815651.tar.gz"
+  },
+  "49715a9e6f19ce3d33b875aacdd6ad8ddaee0ffe": {
+    "hash": "sha256-LMo+NufYbxb8G3ZCKNvtPHafTVHRM4HrZr7kjSkHjrw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/49715a9e6f19ce3d33b875aacdd6ad8ddaee0ffe.tar.gz"
+  },
+  "49762f0a63de0d1845fcd2e6632639c095995336": {
+    "hash": "sha256-ohUhJXdo9UPKhSCxuFXGJE1vl8/QNApQkIrbiszVCbM=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/49762f0a63de0d1845fcd2e6632639c095995336.tar.gz"
+  },
+  "4a0fd2ae492c6bbfd13a134067ee4258f0e0f189": {
+    "hash": "sha256-szLEyrZ9/6/wFa5X2c8iTC8LufihGN4Py0u5+wrISmI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/4a0fd2ae492c6bbfd13a134067ee4258f0e0f189.tar.gz"
+  },
+  "4abd07dc3884124d60e37e1f2dd98a1676859ae0": {
+    "hash": "sha256-jluMtWRFuyG8WGiVn1ge2NfSdRIq8zqS1R12AG/Imtc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/4abd07dc3884124d60e37e1f2dd98a1676859ae0.tar.gz"
+  },
+  "4c36a4fb569688c97cfa28090031e039a6079244": {
+    "hash": "sha256-2+Ii4uqqmFkuRQEarCUY7dNaR2uk3cvcWleE91Gs5a8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/4c36a4fb569688c97cfa28090031e039a6079244.tar.gz"
+  },
+  "4c6a25680546761b80a710ead1dd34e76c203125": {
+    "hash": "sha256-Ikn8KE5OflDl3x7uCTrkHTaKXZ2J09mInOyg9f5wRKo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/4c6a25680546761b80a710ead1dd34e76c203125.tar.gz"
+  },
+  "4d081d98670ff6e98ca42c085294fc75eec15e1d": {
+    "hash": "sha256-arwLfqA/C4w8GQv6GE/H4/tDRWaGDfvEiv7Q7mYRBRI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/4d081d98670ff6e98ca42c085294fc75eec15e1d.tar.gz"
+  },
+  "501133e260d768ed4e1fd7374912ed5c86d6fd90": {
+    "hash": "sha256-AmrzHntk8FLw8qtJAVvOzFuBA7H3wURTnx+PsrIp+pM=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/501133e260d768ed4e1fd7374912ed5c86d6fd90.tar.gz"
+  },
+  "50ca9e6fcfb16a2cbcad59203cfd8ad650e25c49": {
+    "hash": "sha256-xmQrplDxoJ8GhcTyCOuEGn4wwMM3/9M6tyM1dgRGARU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/50ca9e6fcfb16a2cbcad59203cfd8ad650e25c49.tar.gz"
+  },
+  "51feb2a67f211e806e5e2764bc5c06738a6c40d7": {
+    "hash": "sha256-uvOUKbJUTDy9ejJI47Zl3JYi8YNISWWeC/IBjxRK47U=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/51feb2a67f211e806e5e2764bc5c06738a6c40d7.tar.gz"
+  },
+  "5557a53f1f59a67cbd54c25bacd0c56d43158818": {
+    "hash": "sha256-4I14D3FY/GTOyESIywrRz298G1+I6DxwdSz84cI7Bqc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/5557a53f1f59a67cbd54c25bacd0c56d43158818.tar.gz"
+  },
+  "568471b80fd8793d37ed01865d8c2208a9fefd1b": {
+    "hash": "sha256-VAj8qSxbkFqNp0X8BOZNvGTggSXZvzDjODedY11J0BQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/568471b80fd8793d37ed01865d8c2208a9fefd1b.tar.gz"
+  },
+  "56ad1fa6a34ba800e5495d1025a9b0fda338d5b8": {
+    "hash": "sha256-GhK92+nbJ+M5/1ZnPbIJ3EuNub332YK+hyWiwyBqUmk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/56ad1fa6a34ba800e5495d1025a9b0fda338d5b8.tar.gz"
+  },
+  "570f3d7be01fffc751237f4cfcf52d04e20532d1": {
+    "hash": "sha256-205joaeq4ZSyfgxagPQTsx0zpZwSEpq1VCQoHJ77OL8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/570f3d7be01fffc751237f4cfcf52d04e20532d1.tar.gz"
+  },
+  "58404d8cf191d69f2674a8fd507bd5776f46cb11": {
+    "hash": "sha256-+fbTNX7qz6Ew1NrXF49wQh3RVl2ZQ3R7YXMkclUoNT8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/58404d8cf191d69f2674a8fd507bd5776f46cb11.tar.gz"
+  },
+  "58a6ccfd56d9f1de8fb9f77e6c42151f8f0d0f3d": {
+    "hash": "sha256-p4Anm/xeG/d7nYBPDABcdDih/a+0rMjwtVUJru7m9QY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/58a6ccfd56d9f1de8fb9f77e6c42151f8f0d0f3d.tar.gz"
+  },
+  "58d462b1cdb077682b130caa324f3822aeb00b8e": {
+    "hash": "sha256-yDYGtM/vlZqeOy2O+scGHc6Dae0H/cXyC6Gu0inwJNA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/58d462b1cdb077682b130caa324f3822aeb00b8e.tar.gz"
+  },
+  "597efbd7ce9a814bb058f48eabd055b1d1e12145": {
+    "hash": "sha256-sQjjx3DGfi0l8/XNOIoyFYAcDpaQOkD4Ics3g6vkgjM=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/597efbd7ce9a814bb058f48eabd055b1d1e12145.tar.gz"
+  },
+  "59a8889d84a293d7c0366d14c8dbb0eec24fe889": {
+    "hash": "sha256-I6+4CRwLNFwozNRNE5+cbrOX8hBroCh90H2V7qo2gIo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/59a8889d84a293d7c0366d14c8dbb0eec24fe889.tar.gz"
+  },
+  "59e2b9f63526db8b95cf59dde6b2402ec2e48b52": {
+    "hash": "sha256-rbBzoj5m+GAIQyOm5I6W5OIbGH5z0gLheRyGI1q3lmU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/59e2b9f63526db8b95cf59dde6b2402ec2e48b52.tar.gz"
+  },
+  "5a8fdd446b516c81e218245c12129c6ad4bccfa2": {
+    "hash": "sha256-TfLCG2Ro3QnGStyCNqHwO54HQMR2fEOV6FjBv+0LjJ0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/5a8fdd446b516c81e218245c12129c6ad4bccfa2.tar.gz"
+  },
+  "5bce9d580d3b78f48e13e331f69dfa0abd4ff68b": {
+    "hash": "sha256-nBQain0Lc21jOgQFfvkyq615ZmT8qdMxtqIoUcOcO3A=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/5bce9d580d3b78f48e13e331f69dfa0abd4ff68b.tar.gz"
+  },
+  "5dbdcb0ccbe91e64b038b41545d3acc26c74907a": {
+    "hash": "sha256-NOyGw9jhy0r2zCsbkbew+VsHWx92flJOfaCgTjRQdX4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/5dbdcb0ccbe91e64b038b41545d3acc26c74907a.tar.gz"
+  },
+  "5e2a44a9d886b0a509f5bfd0437d33b4871fbac5": {
+    "hash": "sha256-DTO+AMzjq/+n4zJNkTyjiiIlvAo8NlDQ7gbwrFYt0Os=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/5e2a44a9d886b0a509f5bfd0437d33b4871fbac5.tar.gz"
+  },
+  "5e66e961eee421786bdda8495ed1db045e06b5fe": {
+    "hash": "sha256-NvE9Rpdp4sALqKSRWJpqxwl6obmqnIIdvrL1nK5peXc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/5e66e961eee421786bdda8495ed1db045e06b5fe.tar.gz"
+  },
+  "5eddbfdbec4c893182c79047499901c196332e78": {
+    "hash": "sha256-ax9MlBuat3SmYJE5lkuTSula0A/RKoHljSqi9UZ2wO8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/5eddbfdbec4c893182c79047499901c196332e78.tar.gz"
+  },
+  "5f7a4121ef40e8d38317833968fe861fd6913d28": {
+    "hash": "sha256-nWbym6LEAp5zqGblMi8Xu5hX3jgSYOIGw0RFx+BhnFc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/5f7a4121ef40e8d38317833968fe861fd6913d28.tar.gz"
+  },
+  "60f443646b20edee3b7bf18f3a4fb91dc214259a": {
+    "hash": "sha256-HyLNnmK4jud2Ndkc+5MY9MlASh/ehPA/eQATsCVGcUw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/60f443646b20edee3b7bf18f3a4fb91dc214259a.tar.gz"
+  },
+  "6116becb02a6b8e9588ef73d300a9ba4622e156f": {
+    "hash": "sha256-mq617pfH/Na9JB8SDEudxbKJfaoezgjC3xVOIOZ8Qb8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6116becb02a6b8e9588ef73d300a9ba4622e156f.tar.gz"
+  },
+  "62842ea106ff66876f9af4cccdf87913d1ed912e": {
+    "hash": "sha256-yxxm3Iu3FQxdWM0d2VeptZj/ePTa58NFhLgYBzaeSeU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/62842ea106ff66876f9af4cccdf87913d1ed912e.tar.gz"
+  },
+  "62cfe307e942af3417171243b599cc7deac5eab9": {
+    "hash": "sha256-lvN2it+pNyYvGIqtRI+zUZwPrj/3SLMZX9zordYg3IU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/62cfe307e942af3417171243b599cc7deac5eab9.tar.gz"
+  },
+  "62f44f5e7e41dde03c5f0a05f035e293bcf2bcf8": {
+    "hash": "sha256-TFMVjzKWZBN1JISq5RTbXDTkqnttLKxckvwhf3WBQX0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/62f44f5e7e41dde03c5f0a05f035e293bcf2bcf8.tar.gz"
+  },
+  "6310671b24d4e04b803577b1c675d765cbd5773b": {
+    "hash": "sha256-LRutvpXXVK7z+xrnLQVvLY+VRg8IB/VK572PNgvsQfc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6310671b24d4e04b803577b1c675d765cbd5773b.tar.gz"
+  },
+  "6322f2629f29d8b442f4ca897904d407672ebb78": {
+    "hash": "sha256-x8Wi6/vFSJ0nncqLNTGq1tuVErxSB2zrWrVTBFIZtek=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6322f2629f29d8b442f4ca897904d407672ebb78.tar.gz"
+  },
+  "633744bca404ae4edb961a3c2d7bc947a987afa4": {
+    "hash": "sha256-ZzDhi8p8eNrCNTRRUmNCKr0WIYyb4gBAl0tp+Y2Kv2o=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/633744bca404ae4edb961a3c2d7bc947a987afa4.tar.gz"
+  },
+  "6479aa13f32f701c383083d8b28360ebd682fb7d": {
+    "hash": "sha256-T9Q6EhJ20tH5v1fUlnNA3UcdX52DMZE/PQjPWQtcHw0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6479aa13f32f701c383083d8b28360ebd682fb7d.tar.gz"
+  },
+  "64ad62785d442eb4d45df3a1764962dafd5bc98b": {
+    "hash": "sha256-Wp+2Zqg279kfHV3Lqcn3Gx7+Nl0PH09tya/tQTh70WA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/64ad62785d442eb4d45df3a1764962dafd5bc98b.tar.gz"
+  },
+  "64b56832c2cffe41758f28e05c756a3a98d16f41": {
+    "hash": "sha256-m9RlGkHiOL/PNENrdEPqtPlahSqGymsx7gZrCoN/Lsk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/64b56832c2cffe41758f28e05c756a3a98d16f41.tar.gz"
+  },
+  "658d18dcdddb75c760363faa4963427a7c6b52db": {
+    "hash": "sha256-xjLC56NiOwwb5BJ2DLiG3rknMR3rrcYrPuHI24NVL+M=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/658d18dcdddb75c760363faa4963427a7c6b52db.tar.gz"
+  },
+  "66272d2b6c73fb61157541b69dd0a7ce7b42a5ad": {
+    "hash": "sha256-ky+P22s2/fuhriTF4GVQquWaiMs6ZktxDibzKs/I+ao=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/66272d2b6c73fb61157541b69dd0a7ce7b42a5ad.tar.gz"
+  },
+  "6748694be32f11e7ec6b5faeb1b48ca6156d4e06": {
+    "hash": "sha256-CU08QY4X/u4W4AEkK+gUmy5P8/XoBHDJmWX1vdGjmsI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6748694be32f11e7ec6b5faeb1b48ca6156d4e06.tar.gz"
+  },
+  "683332a6430675abfd9867201ef47b2b99bdb266": {
+    "hash": "sha256-bLWItZ8axo4i6q8fej64bs40mVBNKRFWGdq1zII5oHc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/683332a6430675abfd9867201ef47b2b99bdb266.tar.gz"
+  },
+  "68b25244cec6eb9d7f8f790ef781c29c822d8f84": {
+    "hash": "sha256-ugdB7gN3zTAGLm9Jk2hjuuZWxIYxEWYXW72qLpXM+1Q=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/68b25244cec6eb9d7f8f790ef781c29c822d8f84.tar.gz"
+  },
+  "68fb7bdba480915d87177feaa5593a666c0bb602": {
+    "hash": "sha256-yd+RWeY+gHtTkRaxYxXSv27yWupjZtnIDxbsUAMa9eg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/68fb7bdba480915d87177feaa5593a666c0bb602.tar.gz"
+  },
+  "68fd0d80943a828d9e6f49c58a74be1e9ca142cf": {
+    "hash": "sha256-owZbs8ttjKrqTA8fQ/NmBGyIUUItSUvvW4hRv0NPV8Y=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/68fd0d80943a828d9e6f49c58a74be1e9ca142cf.tar.gz"
+  },
+  "698bb1a34331e68f83fc24bdd1b6f97016bb30de": {
+    "hash": "sha256-hj71GKIScfHFVDjXzJ2waBJDFU1dDVduOXxMxKdYvyk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/698bb1a34331e68f83fc24bdd1b6f97016bb30de.tar.gz"
+  },
+  "6c60112b3b3e739fb1ca4a8ea4bea2b6ffe11318": {
+    "hash": "sha256-ZbUN9lv2nGgpQ0rU+H38gSCdCSav//47ESHXDMuQX7c=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6c60112b3b3e739fb1ca4a8ea4bea2b6ffe11318.tar.gz"
+  },
+  "6c6b07e354a52f8f2a9bc776cbc262a74e74fd26": {
+    "hash": "sha256-Pv/X6xgJeVjgIuBXIgZT4/vVrytnl1mMiKjMMjH/qQo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6c6b07e354a52f8f2a9bc776cbc262a74e74fd26.tar.gz"
+  },
+  "6d1d81137112299324b526477ce1db989ab58fb8": {
+    "hash": "sha256-jgQCTM36S8UwSyT4LAfcX4DUIl2OYVMeQdDg3zRrw00=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6d1d81137112299324b526477ce1db989ab58fb8.tar.gz"
+  },
+  "6d9511c28181db66daee4e883f811f6251220943": {
+    "hash": "sha256-jhI0CRi8rgiwBfwEwNBBZ7QrKXYRQ9gUCO7c37Y/ibc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6d9511c28181db66daee4e883f811f6251220943.tar.gz"
+  },
+  "6da5e3cbabd376b566d04282005e52ffe67ef74a": {
+    "hash": "sha256-BRDlNZolMurXpUqnFbS+7ADTcuBthGDYVr6wBn9PIr4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6da5e3cbabd376b566d04282005e52ffe67ef74a.tar.gz"
+  },
+  "6dd9dd79fb51e9f2abc829d5e97b15015b6a8ae2": {
+    "hash": "sha256-C/taNah+rJJwCHTn41udtY5ZyhQgr3wQBGv4dTPR+c8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6dd9dd79fb51e9f2abc829d5e97b15015b6a8ae2.tar.gz"
+  },
+  "6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c": {
+    "hash": "sha256-KD6Fio9qie3wbGAvQaYsMdYOK1QjnRrGExt1oL/6mis=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c.tar.gz"
+  },
+  "70f34e95e30b7ebcc40815d4385d68576c4a15cd": {
+    "hash": "sha256-n3sQz0LhDCdoza4bmXHGvZWROyUpYO7u+00/w7bsO/I=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/70f34e95e30b7ebcc40815d4385d68576c4a15cd.tar.gz"
+  },
+  "72a08a496a23212f23802490ef6f4700d68cfd0e": {
+    "hash": "sha256-/WA3E5kDxHl3YJ5yd020iIVc1YEssAcvlD5/Voceu2Y=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/72a08a496a23212f23802490ef6f4700d68cfd0e.tar.gz"
+  },
+  "73a3947324f6efddf9e17c0ea58d454843590cc0": {
+    "hash": "sha256-WT8ZHU4wDNovIAWbHNSvjx6zmaTn8XH3IobsckIVXxg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/73a3947324f6efddf9e17c0ea58d454843590cc0.tar.gz"
+  },
+  "74774af7b45dd9cefbf9510328fc6ff2374afc50": {
+    "hash": "sha256-ALGr1vI/R2gAgjHfwORYMP/+CeIejnSGqC9Db+GD5uM=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/74774af7b45dd9cefbf9510328fc6ff2374afc50.tar.gz"
+  },
+  "759a61896ccb2200a4becec4443e768638a21d58": {
+    "hash": "sha256-QLjTBLWjybrj197oykkH0saED8SPpjOwyL4VFUnKBCw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/759a61896ccb2200a4becec4443e768638a21d58.tar.gz"
+  },
+  "75b3874edb2dc714fb1fd77a32013d0f8699989f": {
+    "hash": "sha256-A0M6IBoY87ekSV4DfGHDU5zzFWdLjGqSyVr6VENgA+s=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/75b3874edb2dc714fb1fd77a32013d0f8699989f.tar.gz"
+  },
+  "76554f4f2339f5a24eed19c58f2079b51c694152": {
+    "hash": "sha256-42NfFE/QQi1LacquvGHaR3tGVeaU2n/q7tMhwV5+w4E=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/76554f4f2339f5a24eed19c58f2079b51c694152.tar.gz"
+  },
+  "7741807092c4009c1fe4c3648da60ca72b1b80f1": {
+    "hash": "sha256-fMtGQsEbZHNIamrz3hoGvCJn5Dtu0oHhuLmMxOjFhGU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/7741807092c4009c1fe4c3648da60ca72b1b80f1.tar.gz"
+  },
+  "77a3747266f4d621d0757825e6b11edcbf991ca5": {
+    "hash": "sha256-Ls6tB6IxXDQDWwx0BJ7RgbheelC4MH8z97E7wwhkDcY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/77a3747266f4d621d0757825e6b11edcbf991ca5.tar.gz"
+  },
+  "78938553b93075e638035f624973083451b29055": {
+    "hash": "sha256-Sp0g6AWKHNjyUmL5k3RIU+5KtfICfg3o/DH77XRRyI0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/78938553b93075e638035f624973083451b29055.tar.gz"
+  },
+  "7937d3b4d65fa574163cfa59394515d3c1cf16f4": {
+    "hash": "sha256-6V1W/MOx03dPvL8adgE16du7eGemPwwdiZ3NL8FNBkg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/7937d3b4d65fa574163cfa59394515d3c1cf16f4.tar.gz"
+  },
+  "7b0883c03e5edd34ef7bcf703194204299d7099f": {
+    "hash": "sha256-WKrZuOMxmdGlvUI9y8JgwCNMdJ8MULucMhkmW8JCiXM=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/7b0883c03e5edd34ef7bcf703194204299d7099f.tar.gz"
+  },
+  "7b7909f2f6b9414be0958275f4c8e5d69c3bca43": {
+    "hash": "sha256-tG+tM7B6901QP4QyJdf55V38b4XduSU1eb+gaP7BikE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/7b7909f2f6b9414be0958275f4c8e5d69c3bca43.tar.gz"
+  },
+  "7bc11b736250c45e25cfb0215db2f8393779957e": {
+    "hash": "sha256-teUDDvH8Km1WHNXyrUtX1yULYOaTgaAwT6aCaR4MTfs=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/7bc11b736250c45e25cfb0215db2f8393779957e.tar.gz"
+  },
+  "7d7902456061bc2ad21c64c44054f67b5515734c": {
+    "hash": "sha256-hw/EHIYY620doxWTzd+dMf/umLAr1iHmEQWtlR+6Q1I=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/7d7902456061bc2ad21c64c44054f67b5515734c.tar.gz"
+  },
+  "80c3e698ec7379772c7f2aecb9b4b4c4ac52ff0b": {
+    "hash": "sha256-N8PEw7m5BGYgpi/iTrS9GXmhQKAUlQ7/4bCvq72DwVo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/80c3e698ec7379772c7f2aecb9b4b4c4ac52ff0b.tar.gz"
+  },
+  "8486e9b1627b0bc6b2deb9ee8102277a7c1281ac": {
+    "hash": "sha256-aVSaj9cS0fHRp6SIfjSL2FiZmchL5OksRbKVC8eCAxo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8486e9b1627b0bc6b2deb9ee8102277a7c1281ac.tar.gz"
+  },
+  "84ffe550e261cf5ea40a0ec31849ba2443bae99f": {
+    "hash": "sha256-IOc2etC92RsZ02+TY+j+Wy19OY6rz8kI3q0D+BrdiCg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/84ffe550e261cf5ea40a0ec31849ba2443bae99f.tar.gz"
+  },
+  "851e9cb257ba7c66cc8c14214a31c44d2f1e954e": {
+    "hash": "sha256-VP9W8X+S51oEAc2MMl5ALf7aglYZ2Ai38MGSo/FOL98=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/851e9cb257ba7c66cc8c14214a31c44d2f1e954e.tar.gz"
+  },
+  "88af85568bde3b91acb5d4c352ed094d0c1f9d84": {
+    "hash": "sha256-AW+jd1Kl3krTgnPc8NoXfSM91fOan/wIB/mo/feWj74=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/88af85568bde3b91acb5d4c352ed094d0c1f9d84.tar.gz"
+  },
+  "88d836a24b3b11c8720874a1a9286b8ae838d30a": {
+    "hash": "sha256-IvlUwNO/wLLPuqCZf0NtSxMdDx+4ASYYOobklY/97aQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/88d836a24b3b11c8720874a1a9286b8ae838d30a.tar.gz"
+  },
+  "8905e0bdbf5870b50bc3f24345f1af27746f42e8": {
+    "hash": "sha256-aHrJtLBefP76dXPUSxm9qX7rQrgXs/Gt4c7fRRunl68=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8905e0bdbf5870b50bc3f24345f1af27746f42e8.tar.gz"
+  },
+  "89ae0f3a5e221a83aad243def85e822616d3b3c2": {
+    "hash": "sha256-bM8r4G5Y9bP1tOKtks9+Mydtj1eprQvyL8nMu09l5i8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/89ae0f3a5e221a83aad243def85e822616d3b3c2.tar.gz"
+  },
+  "8a5f273bfa281c66354da562f2307c2d394b6c81": {
+    "hash": "sha256-uV7Tl41PCU+8uJa693km5xvysvbptbT7LvGyYIelspk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8a5f273bfa281c66354da562f2307c2d394b6c81.tar.gz"
+  },
+  "8ad7bd1b1595f4cc1a4ccc775d4a3c460f43a596": {
+    "hash": "sha256-P9FTcMwPU1AvH55ly0XydCSVOP0Mfi6jQ0Yg6Muraqk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8ad7bd1b1595f4cc1a4ccc775d4a3c460f43a596.tar.gz"
+  },
+  "8b5b49eb196bec7040441bee33b2c9a4838d6967": {
+    "hash": "sha256-x3gDJ7/lukdOwfRFKrHZqV2zZ3Buqel5GcfbFnxStLU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8b5b49eb196bec7040441bee33b2c9a4838d6967.tar.gz"
+  },
+  "8bc0d1692caa8763fef54d48068238d9bf3c0264": {
+    "hash": "sha256-vlBpL57GQgAFgQf6gUePRlqX6PBSvsmCU1ZmkLOFb0A=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8bc0d1692caa8763fef54d48068238d9bf3c0264.tar.gz"
+  },
+  "8bcb13dbddf16ca44a42f8e98e8cf3d86b2b2e48": {
+    "hash": "sha256-mX6ISmJRC1v3QVTRiTR6c+vrtq00DH15qJwjXsjAPes=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8bcb13dbddf16ca44a42f8e98e8cf3d86b2b2e48.tar.gz"
+  },
+  "8c75e93cd08ccb7ce1ccab22c1fbd6360e3bcea6": {
+    "hash": "sha256-zkp4De2eBoOsPZRHHT3mIPVWFPYboTvn6AQ4AkwXhFE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8c75e93cd08ccb7ce1ccab22c1fbd6360e3bcea6.tar.gz"
+  },
+  "8d04ed27b3bc7929f14b7df9236797dab9f3fa66": {
+    "hash": "sha256-UOXGWm8k9YP0GUwvNEuIxeiXqJo4Jf9uBt+/oYaYUl4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8d04ed27b3bc7929f14b7df9236797dab9f3fa66.tar.gz"
+  },
+  "8e1d24a57066b3cd1bb9685bbc1ca9de5c1b78fb": {
+    "hash": "sha256-tymKOBQbbXAI4bUDSOnZaMoyhFuDwSInvqgGq0eTDl8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8e1d24a57066b3cd1bb9685bbc1ca9de5c1b78fb.tar.gz"
+  },
+  "8e635b0b723c620774dfb8abf382a7f531894b40": {
+    "hash": "sha256-Cch6WCYq9bsWGypzDGapxBLJ0ZB432uAl6YjEjBJ5yg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/8e635b0b723c620774dfb8abf382a7f531894b40.tar.gz"
+  },
+  "917230743aa10f45a408fea2ddb54bbbf5fbe7b7": {
+    "hash": "sha256-wk4mmbPD+kxH5RsVB1tGtx9lB+jAXtpXrhTGZsJeWeA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/917230743aa10f45a408fea2ddb54bbbf5fbe7b7.tar.gz"
+  },
+  "91fe2754796cd8fba5f229505a23fa08f3546c06": {
+    "hash": "sha256-NeuNpMsKZUP5mrLCjJEOSLD6tlJpNO4Z/rFUqZLHE1A=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/91fe2754796cd8fba5f229505a23fa08f3546c06.tar.gz"
+  },
+  "920ba23ea93af56b19dfc38fcddf80b3ddc62685": {
+    "hash": "sha256-WD+YEdwZJg4F4wNvUGDIMsL68QUt5AMypfC22lmLB+8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/920ba23ea93af56b19dfc38fcddf80b3ddc62685.tar.gz"
+  },
+  "92b0f7fe98465c4c435794a58e961306193d1c1e": {
+    "hash": "sha256-VPY1fMYGSF1+87ia+d7b7l8PzNIoKwAbAT+yw5KHjjQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/92b0f7fe98465c4c435794a58e961306193d1c1e.tar.gz"
+  },
+  "947e93089e60c66e681eba22283f4037841451e7": {
+    "hash": "sha256-q1ni++SPbq5y+47fPb6TryMw86gpULwNcXwi5yjXCWI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/947e93089e60c66e681eba22283f4037841451e7.tar.gz"
+  },
+  "94ee6122680ef8ce2173853ca7c99f7aaeeda8ce": {
+    "hash": "sha256-n9yob5tDyWalSAPjH2a3BFcH4Zqd6rwb+V/Qbvaxt7c=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/94ee6122680ef8ce2173853ca7c99f7aaeeda8ce.tar.gz"
+  },
+  "9534865e614c95eb9418e5e73f061c32fa4d9540": {
+    "hash": "sha256-Qf4Y1I/X5xGVZ4u2ud+XdC2dL+0sjR+0pJRJ8SUraiQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/9534865e614c95eb9418e5e73f061c32fa4d9540.tar.gz"
+  },
+  "95e6f9ef101ea97e870bf6eebc0bd1fdfbaf5490": {
+    "hash": "sha256-rxCgEpZ9NXjhq7ByJLtl/3Oy73dPv1EGG95k3eGOUVE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/95e6f9ef101ea97e870bf6eebc0bd1fdfbaf5490.tar.gz"
+  },
+  "971acdd908568b4531b0ba28a445bf0bb720aba5": {
+    "hash": "sha256-WJJ/rjFea1sudGIyjKGupwm39TJ1zbyWlLgoRf1KCBI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/971acdd908568b4531b0ba28a445bf0bb720aba5.tar.gz"
+  },
+  "97e6db3c8c73b15a9541a458d8e797a07f588ef4": {
+    "hash": "sha256-hAekweZGDHVrWVd04RrN+9Jz0D2kode+DpceTlUXii0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/97e6db3c8c73b15a9541a458d8e797a07f588ef4.tar.gz"
+  },
+  "996aaabea9a9fbe498ae0876356028a78e6ef8db": {
+    "hash": "sha256-2Re/9TXRNLVmbq7iAFVgTj4Xt1P1yXjlWaLdNHC8ePU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/996aaabea9a9fbe498ae0876356028a78e6ef8db.tar.gz"
+  },
+  "9ac99fe4c0c27a35dc6f757cef534c646e944881": {
+    "hash": "sha256-8gZZLGL7giVHQIirjUIfsx3scP1L1VTFIZX7QOyjWvk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/9ac99fe4c0c27a35dc6f757cef534c646e944881.tar.gz"
+  },
+  "9b3f4b78c45aab8a2f25a5f9e7bbc00995bc3dde": {
+    "hash": "sha256-VjWoF5oI+K101xKvF+MDsy1+eCkkUytn39PHKqOCkjo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/9b3f4b78c45aab8a2f25a5f9e7bbc00995bc3dde.tar.gz"
+  },
+  "9cb9d5cc51cf5e2a47bb2a0e2f2e519ff11c1431": {
+    "hash": "sha256-yfjOly1NvdNIFc3zzFb8XSCA+IW9uIzjtQRhf4/NQzY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/9cb9d5cc51cf5e2a47bb2a0e2f2e519ff11c1431.tar.gz"
+  },
+  "9f2b65da14c216df53933748e489db0f11121464": {
+    "hash": "sha256-ioorpQwPOVYAqjMaXqMaYcsYDGR2KHe4AB8uO5n3908=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/9f2b65da14c216df53933748e489db0f11121464.tar.gz"
+  },
+  "a06c2e4415e9bc0346c6b86d401879ffb44058f7": {
+    "hash": "sha256-ONQ1Ljk3aRWjElSWD2crCFZraZoRj3b3/VELz1789GE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/a06c2e4415e9bc0346c6b86d401879ffb44058f7.tar.gz"
+  },
+  "a10318892603d9a0b925df7cc7771a840304b997": {
+    "hash": "sha256-tFcdc2fd+oEVtB2ccKRHppMkxf1bPorKWRgfn5xZoaw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/a10318892603d9a0b925df7cc7771a840304b997.tar.gz"
+  },
+  "a1de3e748a185a335b446613aaeff1eb10e83cdf": {
+    "hash": "sha256-phH6FHdP9ycVXSzsON0/IyEuqkR65/8cNxJcTOBr3JE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/a1de3e748a185a335b446613aaeff1eb10e83cdf.tar.gz"
+  },
+  "a4b9187417d6be349ee5fd4b6e77b4172c6827dd": {
+    "hash": "sha256-qQqapnKKH5X8rkxbZG5PjnyxvnpyZHpFVi/CLkIn/x0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/a4b9187417d6be349ee5fd4b6e77b4172c6827dd.tar.gz"
+  },
+  "a4e4645651f86d6684c15dfa9931b7841dc52a66": {
+    "hash": "sha256-dEpPkEohBB3qU1Vma/1VePkGGst4nA2RKgun7NiO2OA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/a4e4645651f86d6684c15dfa9931b7841dc52a66.tar.gz"
+  },
+  "a533cd3c33aea6acb0f9bf9a56f35dcfe6a8eb53": {
+    "hash": "sha256-ksHel/kkWk4cyCx/+k8IfqjnID8i744WsZi9+AVSNpw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/a533cd3c33aea6acb0f9bf9a56f35dcfe6a8eb53.tar.gz"
+  },
+  "a6674e279b14958625d7a530cabe06119c7a1532": {
+    "hash": "sha256-xtr2IVI+3h/u9f84ye7szHR/U2E8Bm5NN7vhqaCkiyI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/a6674e279b14958625d7a530cabe06119c7a1532.tar.gz"
+  },
+  "a98449c11d6c688b54c1ca132148a62d7e586a2a": {
+    "hash": "sha256-4wJLK+yZjBELTzTnB/9Xb70uGodetEyjVDtFshviQyA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/a98449c11d6c688b54c1ca132148a62d7e586a2a.tar.gz"
+  },
+  "a9bdfa3db2fbc9b9f12c93450d04a671f33a5102": {
+    "hash": "sha256-uDrlxJ8uZypeVe+NAhuYjCluYIjXwtVYH9aBW9P9ars=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/a9bdfa3db2fbc9b9f12c93450d04a671f33a5102.tar.gz"
+  },
+  "aa71f63de226c5592dfbfc1f29949522d7c95fac": {
+    "hash": "sha256-QSzUyRDGdBH9TaG3YCHnJp12WcR8kdbsZFIk8I+JW1Y=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/aa71f63de226c5592dfbfc1f29949522d7c95fac.tar.gz"
+  },
+  "ad3da4e8f7fd72dcc5e93a6b89822c59a7cd10ff": {
+    "hash": "sha256-ag8xIRd66owaOMjH05eqZtRRYhViWP/OkLX3cWP1BJU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ad3da4e8f7fd72dcc5e93a6b89822c59a7cd10ff.tar.gz"
+  },
+  "ad907a69da0c8a4f7a943a7fe012712208da6dee": {
+    "hash": "sha256-JcAgEKmn1cvuBmicnzwkQiVG0GNJCNp5C2pVSxz699g=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ad907a69da0c8a4f7a943a7fe012712208da6dee.tar.gz"
+  },
+  "add40814fda369f6efd989977b2c498aaddde984": {
+    "hash": "sha256-nqbIpLHL2m+Mq6kI0hzVBrfyv5Xwdz+oeOFUslN5VsI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/add40814fda369f6efd989977b2c498aaddde984.tar.gz"
+  },
+  "affb6ee38d629c9296749767ab832d69bb0d9ea8": {
+    "hash": "sha256-q9OkKmp0Nor+YkFc8pBVAOoXoWzwjjzg9lBUKAUnjmQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/affb6ee38d629c9296749767ab832d69bb0d9ea8.tar.gz"
+  },
+  "b2ac15e27fce703d2f37a79ccd94a5c0cbe9720b": {
+    "hash": "sha256-bR0K6SR19QuQwDUic+CJ69VQTSGqry5a5IOpPTVJFlo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/b2ac15e27fce703d2f37a79ccd94a5c0cbe9720b.tar.gz"
+  },
+  "b37e3d58e5c5cf8d739b315d6114e02d42e66664": {
+    "hash": "sha256-irx8aMEdZG2WcQVE2c7ahwLjqEoUAOOjvhDDk69a6lE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/b37e3d58e5c5cf8d739b315d6114e02d42e66664.tar.gz"
+  },
+  "b667c8cab109df307e1b4d56b0b43f5c4a353533": {
+    "hash": "sha256-fP1c2F/nn4BsmO1u0JAGbECQfv0J9TCZWqiwu6W+JvM=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/b667c8cab109df307e1b4d56b0b43f5c4a353533.tar.gz"
+  },
+  "b780e47fc780ddc8da13afa35a3f4ed5c157823d": {
+    "hash": "sha256-Juuf57GQI7OAP6O03KtSzyKJAoXtGKjyYJ+sTM1A4mU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/b780e47fc780ddc8da13afa35a3f4ed5c157823d.tar.gz"
+  },
+  "b8e31d110c6b039899d0f307792bdb0ff50ece2c": {
+    "hash": "sha256-RBfzfxYzUnwVprnZFAiBinUL++09svvWjNA0Hc9zkiw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/b8e31d110c6b039899d0f307792bdb0ff50ece2c.tar.gz"
+  },
+  "ba0894efa03beb70780156b91e28c716b7a4764d": {
+    "hash": "sha256-30yCHcO9LdZ9VKQpObWRfk49M5tC85IZvutXgzGwTjQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ba0894efa03beb70780156b91e28c716b7a4764d.tar.gz"
+  },
+  "bba07bd4d41835e3e5f456a9603ce601b1be1937": {
+    "hash": "sha256-sIbh8mYWrGhaXtRxe/FYIT1aD8WAKfQYJJbhWhz9jEs=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/bba07bd4d41835e3e5f456a9603ce601b1be1937.tar.gz"
+  },
+  "bd4055d5554614520d4a0706b34dc0c317c6b608": {
+    "hash": "sha256-fOn9ijHtouLncw4r7ohUa3HLt+4WxY884mKDzM7yoHs=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/bd4055d5554614520d4a0706b34dc0c317c6b608.tar.gz"
+  },
+  "bff59884307c0ab009bd5e81afd9324b46a6c0f9": {
+    "hash": "sha256-+qvhJgYqs8aj/Kmojr7lmjbXmskwVvbYBn4ia9wOv3k=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/bff59884307c0ab009bd5e81afd9324b46a6c0f9.tar.gz"
+  },
+  "c03f04a313b712f8ab00a2d862c10b37318699ae": {
+    "hash": "sha256-uyW4mPS+sctj6TVqeg03Xd6nbxicHqWwsRFK9582PQI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c03f04a313b712f8ab00a2d862c10b37318699ae.tar.gz"
+  },
+  "c134aaec6acf4fa95fe4aa0dc9aba3eacdbbe55a": {
+    "hash": "sha256-4mMUHBsdK4U4uhh8GpKlG3p/s3ZCcLX1qATPyTD4Xhg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c134aaec6acf4fa95fe4aa0dc9aba3eacdbbe55a.tar.gz"
+  },
+  "c14cb839003348692158b845db9edda201374548": {
+    "hash": "sha256-L3XwPhvwIR/mUbugMbaHS9dXyhO7bApv/gdlxQ+2Bbo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c14cb839003348692158b845db9edda201374548.tar.gz"
+  },
+  "c19629a0c50e6ca2485c3b154b1dde841a08d169": {
+    "hash": "sha256-S5qg/LLPlMmNtRTTi7vW8y/c+zcId7ADmMqIt0gqJBo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c19629a0c50e6ca2485c3b154b1dde841a08d169.tar.gz"
+  },
+  "c2390a59016f74e7d5f75ef09510768b4f30217e": {
+    "hash": "sha256-WgyWvItbysSqeD/LdBr233NYlKF1HaxIDtHIr6BQOjw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c2390a59016f74e7d5f75ef09510768b4f30217e.tar.gz"
+  },
+  "c390f10519ae69fdb03b3e5764f5592fb6924bcc": {
+    "hash": "sha256-9Zo3YYoo9mJ4Buyj7ofSrlZURrwstBo0vgzeTq1jMGw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c390f10519ae69fdb03b3e5764f5592fb6924bcc.tar.gz"
+  },
+  "c478c6868648eff49eb04a4df90d703dc45b312a": {
+    "hash": "sha256-BFtMT6eccBWUyq6b8UXRAbB1R1XD3CrrFf1DM3aUI5c=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c478c6868648eff49eb04a4df90d703dc45b312a.tar.gz"
+  },
+  "c5f0ce3b65222f5dbb1a12f9fe894524881ad590": {
+    "hash": "sha256-KzAZf5vgrdp33esrgle71i0m52MvRJ3z/sMwzb+CueU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c5f0ce3b65222f5dbb1a12f9fe894524881ad590.tar.gz"
+  },
+  "c610c282ef73f830d80c1f0999dce8e83f024ef5": {
+    "hash": "sha256-BeLkPEsigTKZxWZHx9qPtcREtgpiP5EkiHFyNqgrKyI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c610c282ef73f830d80c1f0999dce8e83f024ef5.tar.gz"
+  },
+  "c6cb7c7d7a04b3f5d999c28e2e9c0c31b2d50ece": {
+    "hash": "sha256-aFonUd15PJkQmz5lDJthtd1rU+8OXNknHDlgqH2s+OA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c6cb7c7d7a04b3f5d999c28e2e9c0c31b2d50ece.tar.gz"
+  },
+  "c7b2a71e7f8ecb167fad4c97227c838439280175": {
+    "hash": "sha256-+Lom3xjPmhhZr3G4aV054lbhLjvJsPaQalSqkKUijvU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c7b2a71e7f8ecb167fad4c97227c838439280175.tar.gz"
+  },
+  "c824fe2bbbed6b29e50c694420aa2b377782f80a": {
+    "hash": "sha256-eH/XO53CZCbtDFQt4ok1H3Rhd9E8HXQOhYd68Mnjb84=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c824fe2bbbed6b29e50c694420aa2b377782f80a.tar.gz"
+  },
+  "c84f3540624b81fc44067030afce2ff78d6ede05": {
+    "hash": "sha256-+GMR051L89asgavX2T3zKwWl8xUFHenlCWJYELhMuyA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c84f3540624b81fc44067030afce2ff78d6ede05.tar.gz"
+  },
+  "c917790ab9aec50c5fd664cbfad8dd45110cfff3": {
+    "hash": "sha256-5+cw9vWPizK7YlEhiNJheYVYOgtheEifd4g1KF5ldyE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c917790ab9aec50c5fd664cbfad8dd45110cfff3.tar.gz"
+  },
+  "c9316be0faca5d5b9fd3b57350de650755f42dc0": {
+    "hash": "sha256-TKiV7yfYY/WJ0US7mkJ3J7nBFBHtdGHgwzkDgZmyv1A=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/c9316be0faca5d5b9fd3b57350de650755f42dc0.tar.gz"
+  },
+  "cac6d5fb595f5811a076336682d5d595ac1c9e85": {
+    "hash": "sha256-N5AAlwQFGGi47cj0m7Te08bA486gwY6NBOx4Qcy4lpo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/cac6d5fb595f5811a076336682d5d595ac1c9e85.tar.gz"
+  },
+  "cc4624fbc6ec3563d98fbe8f215a8b8e10b16f32": {
+    "hash": "sha256-cQiUrsSIs7AgDifOChKScZj+/25qUxEVMg3TcsGkQUY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/cc4624fbc6ec3563d98fbe8f215a8b8e10b16f32.tar.gz"
+  },
+  "cd1931314beafeebc957964c65802961e283411e": {
+    "hash": "sha256-fKHVcAEuEqFtzPvS6aV7qfOQfpDPOb8MWx0sPPw9/SY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/cd1931314beafeebc957964c65802961e283411e.tar.gz"
+  },
+  "ce72d1c484ba133a18e966d67be66bce85695451": {
+    "hash": "sha256-8op8IFKh3dZY02Yiehvqz1XyeOw9qSoe0f31M4yzw1U=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ce72d1c484ba133a18e966d67be66bce85695451.tar.gz"
+  },
+  "cea857d3c18d1385d1f5b66cd09ea1e44173945c": {
+    "hash": "sha256-tqff8Aaj9uebJeNYuNdaDBllsj/mwRStWhhY3zB8xlU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/cea857d3c18d1385d1f5b66cd09ea1e44173945c.tar.gz"
+  },
+  "cfc12456941da47b64b7a3994f8dccdc9fe7d2c9": {
+    "hash": "sha256-YjCqtdaxjlEJooU8dbrfI7RPtF9FYFjTDlUqJsQ6Oj8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/cfc12456941da47b64b7a3994f8dccdc9fe7d2c9.tar.gz"
+  },
+  "d0275cd1316d9b7a2e0fae028ce95a5a18741e1d": {
+    "hash": "sha256-QHAcaZ5HbgoWpRDAau6IWPdBD2+WhBZVq9VDQRas5oU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d0275cd1316d9b7a2e0fae028ce95a5a18741e1d.tar.gz"
+  },
+  "d166ff8c5950f80b0a476956e7a0ad2f27c12505": {
+    "hash": "sha256-ivslvFNr3550Grko9xbHPtA63XNc+twFfZQFhBmPaME=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d166ff8c5950f80b0a476956e7a0ad2f27c12505.tar.gz"
+  },
+  "d3dbf916446131417e4c2ea9eb8591b23b466d27": {
+    "hash": "sha256-p0qH7twC3yN8QIrnr0TKx2Nb7qTaDclhFGePR8qLXHU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d3dbf916446131417e4c2ea9eb8591b23b466d27.tar.gz"
+  },
+  "d787c66276e7e95899230539f556e8b83ee16f6d": {
+    "hash": "sha256-JwQ3jfwwOvM9eJWP/D3wXUBDysRxpa+mktYFajwA3IA=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d787c66276e7e95899230539f556e8b83ee16f6d.tar.gz"
+  },
+  "d850fd470445d73de318a21d734d1e09e29b773c": {
+    "hash": "sha256-AnyOcQFA3N6AFZiG7eLS1xCm1qX6hko9lFV4oV9p/E8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d850fd470445d73de318a21d734d1e09e29b773c.tar.gz"
+  },
+  "d85b18e76962d6a3ba131bc5b514d77558e82762": {
+    "hash": "sha256-x/1IsGz74I3Hg1pufke7fpzbQHJFXEZOCwp7hSL90J0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d85b18e76962d6a3ba131bc5b514d77558e82762.tar.gz"
+  },
+  "d8d415f6a1cf80ca138524bcc395810b176d40fa": {
+    "hash": "sha256-SEqqmkfV/wsr1ObcBN5My29RY9TWfxnQlsnEEIZyR18=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d8d415f6a1cf80ca138524bcc395810b176d40fa.tar.gz"
+  },
+  "d934fb44f1d22bb76be6b56a7b2425ab3b1daf8b": {
+    "hash": "sha256-DeZZT+xlb+oWdTKXvf4W/siL8q/ESDVtpCOXUO/yeao=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d934fb44f1d22bb76be6b56a7b2425ab3b1daf8b.tar.gz"
+  },
+  "d9368ff7f743b2ac2145a3342db13b1ad950cba5": {
+    "hash": "sha256-E/tpautC1I3w2+p2xrnd2CjdHVvNooX7yW84gUXlyrg=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d9368ff7f743b2ac2145a3342db13b1ad950cba5.tar.gz"
+  },
+  "d98426109258b266e1e92358c5f11716d2e8f638": {
+    "hash": "sha256-U4ObSk4mtpp/gq8fnDQOKFfrgZ8/SuF6v5UhqxyAhWk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d98426109258b266e1e92358c5f11716d2e8f638.tar.gz"
+  },
+  "d9af23944b884ec528b505f41d81923bb3136a51": {
+    "hash": "sha256-815IDF/V+blItEjW1ljUeV/it/8w532tm4k295z+ago=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d9af23944b884ec528b505f41d81923bb3136a51.tar.gz"
+  },
+  "d9cf7a2f1dad3c6b660148eaf77e955d418fdb8b": {
+    "hash": "sha256-gvs85PiyNov10Ar0JytOzjmJQVOeVx74ZQSbV+XUKa4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/d9cf7a2f1dad3c6b660148eaf77e955d418fdb8b.tar.gz"
+  },
+  "db7372e60c722ca7f12ab359e57e6bf7611ab126": {
+    "hash": "sha256-Y+W4Ceb0+gUJbBC9ziy672not6zc8JVIGTWYsPmWk7c=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/db7372e60c722ca7f12ab359e57e6bf7611ab126.tar.gz"
+  },
+  "dbf696adb4c0b9c020074e75043c90592981ee7f": {
+    "hash": "sha256-9JDf9Tj6K55JRTNfw9U7wR3/idQ8eBoQRCOQnLm3hbs=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/dbf696adb4c0b9c020074e75043c90592981ee7f.tar.gz"
+  },
+  "dbfb970a59cd87b628d087eb8e3fbe19c8e20601": {
+    "hash": "sha256-I4qmdDKDXvUJRM0ThN6Hy2oMiGo+FA6QIdfgAzYgWiE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/dbfb970a59cd87b628d087eb8e3fbe19c8e20601.tar.gz"
+  },
+  "dda5cfc5722c429eaba1c910ca32c2c0c5bb1a3f": {
+    "hash": "sha256-jFsnEyS+FThk7L48FzAdSp5fNPSLvM8hTL/VC5FMlOE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/dda5cfc5722c429eaba1c910ca32c2c0c5bb1a3f.tar.gz"
+  },
+  "ddd075f1939aed8147b7aa67f042eda3fce22790": {
+    "hash": "sha256-ODGRkirfUG8DqV6ZcGRjKeCyEtsU0r+ICK0kCG6Xza0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ddd075f1939aed8147b7aa67f042eda3fce22790.tar.gz"
+  },
+  "ddd39af81fe8b0288102a7cb97959dfce723e0f3": {
+    "hash": "sha256-I6jZ5jsJUAdjQti/lj4d11+GRSHjbN/hoGYO7ezGKv8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ddd39af81fe8b0288102a7cb97959dfce723e0f3.tar.gz"
+  },
+  "debd26fed283d80456ebafa33a06957b0c52e451": {
+    "hash": "sha256-ftvcD8I+hYqH3EGxaRZ0w8FHjBA34OSTTsrUsAOtayU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/debd26fed283d80456ebafa33a06957b0c52e451.tar.gz"
+  },
+  "e0f9dcd180fdcfcfa8d79a3531e11d99e79321d3": {
+    "hash": "sha256-Jk2jby7vWWSdnUU8s8zIIfyXFt7keWPJPyTyxPBrqBw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e0f9dcd180fdcfcfa8d79a3531e11d99e79321d3.tar.gz"
+  },
+  "e10607b45ff745f5f876bfa3e94fbcc6b44bdc11": {
+    "hash": "sha256-XoaHRQ0esrV9e5JFSZkVR7QkGfky9NMnXaLQl8lohAM=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e10607b45ff745f5f876bfa3e94fbcc6b44bdc11.tar.gz"
+  },
+  "e4018b5176132b4f3c5d6e61cea383f42288d0f5": {
+    "hash": "sha256-8WCyIaApsLPOybe+cntF4ISyQKN41L2IRAATd9KmzL0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e4018b5176132b4f3c5d6e61cea383f42288d0f5.tar.gz"
+  },
+  "e4211fe541a13350275e4684de79adfebe9a91f8": {
+    "hash": "sha256-WFFrpvulhT9Z0L+zAgZQGIzcg3YxkcJpLfNeqpf3afI=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e4211fe541a13350275e4684de79adfebe9a91f8.tar.gz"
+  },
+  "e43eff80d17cf34852dcd92ca5e6986d23a7040f": {
+    "hash": "sha256-jokekIuuQLx5UtuPs4XAI+euispeFCwSQByVKVelrC4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e43eff80d17cf34852dcd92ca5e6986d23a7040f.tar.gz"
+  },
+  "e491a005ee1d310f4c138bf215afd44cfebf959c": {
+    "hash": "sha256-bYAIprYyqELNsWPZ86IZRtSeauOPCBaRmQ35ePrXODU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e491a005ee1d310f4c138bf215afd44cfebf959c.tar.gz"
+  },
+  "e50787cadd3bc54f6d9c0704493a79078bb8a4e5": {
+    "hash": "sha256-N+z+KJqSycClyPm85YR0NolHc96KbmsifZSYOzCuifc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e50787cadd3bc54f6d9c0704493a79078bb8a4e5.tar.gz"
+  },
+  "e5ae6245f841b5778c79ac93b28fa4f56b679c5d": {
+    "hash": "sha256-yOzU/INVeAfxzCFUdtn+4VHHAzshBtERvXx2HA9RV0U=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e5ae6245f841b5778c79ac93b28fa4f56b679c5d.tar.gz"
+  },
+  "e78bf56f206cb47bee28a217423acb651e076848": {
+    "hash": "sha256-avjOWIK+DTyJQq2sgvm3PN4umagNrJ3wCKS8woK56pk=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e78bf56f206cb47bee28a217423acb651e076848.tar.gz"
+  },
+  "e8d47a6987effe34d5595baf321d82d3519a8527": {
+    "hash": "sha256-5h56+A7ZypckJ9mwht7XP/66oiehwAEQ4Z6WeVhQBvQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e8d47a6987effe34d5595baf321d82d3519a8527.tar.gz"
+  },
+  "e909815acdbe37e69440261ebb1091ed52e1dec6": {
+    "hash": "sha256-d2n1fsdt4+1hv4In+o6GpGyfeyVHpn39Njm7tQ2zyYQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e909815acdbe37e69440261ebb1091ed52e1dec6.tar.gz"
+  },
+  "e90dbb89f8ec8fbf8a16b61a31d6cc19a840de4f": {
+    "hash": "sha256-EeCp7i8ao+KCm8OAx4ALCDg7Nj0GAZbcC1ecyw76qZQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/e90dbb89f8ec8fbf8a16b61a31d6cc19a840de4f.tar.gz"
+  },
+  "eb3ede203275c38000177f72ec0f9965312806ef": {
+    "hash": "sha256-twcbL2fKOE0PdiEboSIObzAedljZ3arBm6QQUw/W5HQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/eb3ede203275c38000177f72ec0f9965312806ef.tar.gz"
+  },
+  "ec187cafba510cddac265329ca7831ec6f3b9955": {
+    "hash": "sha256-a+TJFLt77G4UyvcLz5Nsc6gvsgCTwmpZDNyfN8YUJDc=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ec187cafba510cddac265329ca7831ec6f3b9955.tar.gz"
+  },
+  "ec4fe14586f2b0a1bc65d6db17f8d8acd8a90433": {
+    "hash": "sha256-wEm4HSfeZOpn1OKw7ipLhoeNko8aPKDl2abupdQq+ok=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ec4fe14586f2b0a1bc65d6db17f8d8acd8a90433.tar.gz"
+  },
+  "ec57ab29c86d632639726631fb2bb178d23e1c91": {
+    "hash": "sha256-z9ykKuxN54QBkT1+MPPNvlAS54xu+yb2Aa1exYws0us=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ec57ab29c86d632639726631fb2bb178d23e1c91.tar.gz"
+  },
+  "eca2596a355b1a9952b4f80f8f9caed300a272b5": {
+    "hash": "sha256-MOqkM7DCQl1L8Jn9nyw89EoAr0ez4+d39HeKy2cb66c=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/eca2596a355b1a9952b4f80f8f9caed300a272b5.tar.gz"
+  },
+  "ecb6b07d280f2cef8214bc4b999ad83ac1d9205c": {
+    "hash": "sha256-xMiQQHC2GsH9MQJDQkSeAaFr5g7tix0CVn3JvgwxauQ=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ecb6b07d280f2cef8214bc4b999ad83ac1d9205c.tar.gz"
+  },
+  "eebbd01edfeff6404778c92efe5554e42e506a18": {
+    "hash": "sha256-Eo9jvIhiRlMvNYSqQVS9/sIIkmIWpDJfenqObTWgy40=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/eebbd01edfeff6404778c92efe5554e42e506a18.tar.gz"
+  },
+  "ef66b151bc2604f431b5668fcec4747db4290e11": {
+    "hash": "sha256-fqr+PmsCEZr3sTQ2ttFrS8Cy9Z/R/6gNwjmcXedQ4CE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/ef66b151bc2604f431b5668fcec4747db4290e11.tar.gz"
+  },
+  "f1404d2a3974dfcfd4193246e763edeeb4b399c1": {
+    "hash": "sha256-TuIJbr5URQJOChsb0OuiLO3A0mUyoZ0zMU4dzquhL58=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f1404d2a3974dfcfd4193246e763edeeb4b399c1.tar.gz"
+  },
+  "f2a2394d9ca7a6099f78d8b0d178530e7c9a8e26": {
+    "hash": "sha256-i/wNeZwHDu1hcPXLjjjndiD4Qd/h8pxnKQkdZ5yzQg4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f2a2394d9ca7a6099f78d8b0d178530e7c9a8e26.tar.gz"
+  },
+  "f2cb435c5dbf3ee19493e224485d977cb2d36d8b": {
+    "hash": "sha256-zBEAROWfH6+G2sCBIN/F83byfq8dKCecokIqazQ74n0=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f2cb435c5dbf3ee19493e224485d977cb2d36d8b.tar.gz"
+  },
+  "f3741a3a68ade59ec894ed84a64673494d2ba8f3": {
+    "hash": "sha256-WtZ3FindaePKbtlnilK9KkOoPxBaxRKNVM+8D52DtBE=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f3741a3a68ade59ec894ed84a64673494d2ba8f3.tar.gz"
+  },
+  "f3cd62d8bd043ef20507e84bb6b4b53731ccf3a7": {
+    "hash": "sha256-KVaTJKU7r7zk57Fn9zl5s34oq8tsLkSRV3VHM6Q6F+s=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f3cd62d8bd043ef20507e84bb6b4b53731ccf3a7.tar.gz"
+  },
+  "f435b0bd772578c70e5d158b85267bb886316f88": {
+    "hash": "sha256-9an4YAz2QKC3yAJ5/tOfmqOJViGATz7+NhKuZpr4oC4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f435b0bd772578c70e5d158b85267bb886316f88.tar.gz"
+  },
+  "f4685bf11ac466dd278449bcfe5fd014e94aa504": {
+    "hash": "sha256-MjoY1tlVZgN6JqoTjhhg0zSdHzc8yplMr8824sfIKp8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f4685bf11ac466dd278449bcfe5fd014e94aa504.tar.gz"
+  },
+  "f541f95ffd6852fbbe88636317c613285bc105af": {
+    "hash": "sha256-tONS2Eai/eVDecn6ow4nN9F7++UjY6OAKezeCco8hYU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f541f95ffd6852fbbe88636317c613285bc105af.tar.gz"
+  },
+  "f58a87ac4dc6a7955c64c9e4408fbd693e804686": {
+    "hash": "sha256-hZdbF9lw7fR5K8UfUaESS7/c4v9u7vEcSylEEbc6//4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f58a87ac4dc6a7955c64c9e4408fbd693e804686.tar.gz"
+  },
+  "f66d2908542e93c0204c6c241f794afe4e9cd5d1": {
+    "hash": "sha256-sfaLNslFpW/NiFxJNXqoMEykBdfjoxgGBbfntrszaUo=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f66d2908542e93c0204c6c241f794afe4e9cd5d1.tar.gz"
+  },
+  "f6b83f305a755cd49cf5f6a66b2b789be93dc7b9": {
+    "hash": "sha256-B9kNSHH/FhBdeAnXPUxiZAZK9efJpqo0MnuR9nfLlLU=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f6b83f305a755cd49cf5f6a66b2b789be93dc7b9.tar.gz"
+  },
+  "f6d13cf6281b25f2ce342a49a41a10a0381e00f0": {
+    "hash": "sha256-ofFBxW4p7rZFZm9w5cyA0semYLJWFu9emv8bfTfAFok=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f6d13cf6281b25f2ce342a49a41a10a0381e00f0.tar.gz"
+  },
+  "f742f2fe327463335e8671a87c0b9b396905d1d1": {
+    "hash": "sha256-UPq62MkfGFh9m/UskoB9uBDIYOcotITCJXDyrbg/wKY=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f742f2fe327463335e8671a87c0b9b396905d1d1.tar.gz"
+  },
+  "f749ec853adcacc5f14e9ec375f244104e033d88": {
+    "hash": "sha256-vn4YerjgEn0oVwMYXRb8Kp+Li4e9jQ0s9DbFEnj45+U=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f749ec853adcacc5f14e9ec375f244104e033d88.tar.gz"
+  },
+  "f969cd3ae3f9fbd4e43205431d0ae286014c05b5": {
+    "hash": "sha256-WUVN7+lzDI+VC5PuJjhHiS4JpVr1x0Ic30i2tVrI6W8=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/f969cd3ae3f9fbd4e43205431d0ae286014c05b5.tar.gz"
+  },
+  "fbaa7b3d52b958e3ac06e15416e1785138bde063": {
+    "hash": "sha256-3OLlUL21YcdOZcnroPMwvMVJgu8bsGHldTnZh8y6q9M=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/fbaa7b3d52b958e3ac06e15416e1785138bde063.tar.gz"
+  },
+  "fd3b482274d6988349ba810ea5740e29153b1baf": {
+    "hash": "sha256-0ohPSEtQLq6PJBIInX4NDRfMWCoPVz7gSoai89L6nc4=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/fd3b482274d6988349ba810ea5740e29153b1baf.tar.gz"
+  },
+  "fdfa6a1febc43c7467aa7e937b87b607956f2346": {
+    "hash": "sha256-S0U6Xuntz16DrpYwSqMQu8Cu7UuD/JufHUxIHv826yw=",
+    "url": "https://github.com/Yazelix/nova-helix/releases/download/grammar-sources-2026-11-02/fdfa6a1febc43c7467aa7e937b87b607956f2346.tar.gz"
+  }
 }

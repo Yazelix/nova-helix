@@ -26,6 +26,7 @@
   in {
     packages = eachSystem (system: {
       inherit (pkgsFor.${system}) helix;
+      grammar-sources = self.checks.${system}.codeberg_grammars.sources;
       yazelix_helix = pkgsFor.${system}.helix;
       yazelix_helix_steel = pkgsFor.${system}.runCommand "yazelix-helix-steel" {} ''
         install -D -m 0444 ${./yazelix/steel/bridge-actions.scm} \
@@ -55,22 +56,20 @@
           cargo = msrvToolchain;
           rustc = msrvToolchain;
         };
+        denyGrammarFetch = _: throw "Grammar evaluation must not fetch sources.";
       in {
         helix = self.packages.${system}.helix.override {
           rustPlatform = msrvPlatform;
         };
         codeberg_grammars = pkgs.callPackage (builtins.scopedImport {
           builtins = builtins // {
-            fetchTree = args:
-              assert lib.assertMsg (!(args ? url && lib.any (host: lib.hasInfix host args.url) ["codeberg.org" "git.sr.ht"]))
-                "Grammar evaluation must not fetch Codeberg or SourceHut.";
-              builtins.fetchTree args;
+            fetchTree = denyGrammarFetch;
+            fetchGit = denyGrammarFetch;
+            fetchTarball = denyGrammarFetch;
+            fetchurl = denyGrammarFetch;
+            fetchMercurial = denyGrammarFetch;
           };
-        } ./grammars.nix) {
-          includeGrammarIf = grammar:
-            builtins.hasAttr grammar.source.rev (builtins.fromJSON (builtins.readFile ./grammar-sources/hashes.json))
-            || lib.any (host: lib.hasPrefix host grammar.source.git) ["https://codeberg.org/" "https://git.sr.ht/"];
-        };
+        } ./grammars.nix) {};
       })
       pkgsFor;
 

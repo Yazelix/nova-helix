@@ -37,6 +37,7 @@ Fixes:
 
 Packaging:
 
+* Fetch every pinned grammar from immutable Yazelix-owned archives at build time, with hash verification, upstream fallback, a complete source catalog and an export for retained source caching.
 * Bundle the pinned cylc grammar source after its GitHub repository was deleted, preserving syntax support on fresh Nix installs.
 * Export the Steel-enabled editor as `packages.<system>.yazelix_helix` for Yazelix consumers.
 * Export the isolated Steel bridge modules as `packages.<system>.yazelix_helix_steel`.

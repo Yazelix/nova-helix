@@ -37,36 +37,44 @@ Nixpkgs instead.
 
 ## Grammar source delivery
 
-`HELIX-GRAMMAR-SOURCES-001`: Nix evaluation and packaged grammar builds do not
-contact Codeberg or SourceHut. `languages.toml` owns grammar URLs, revisions, and subpaths;
-`grammar-sources/<revision>.tar.gz` contains each selected source tree,
-unmodified, with its upstream license notices. `hashes.json` records the original
-Nix source NAR hashes. A fixed-output derivation unpacks and verifies each local
-archive at build time. Other hosts retain the upstream fetch path, and standalone
-`hx --grammar fetch` retains upstream behavior.
+`HELIX-GRAMMAR-SOURCES-001`: Nix evaluation performs no grammar-source
+network fetches. Packaged grammars build from hash-verified source archives owned
+by Yazelix, so deleting or losing an upstream grammar repository cannot break a
+published pin. `languages.toml` owns upstream URLs, revisions, subpaths and grammar
+selection. `grammar-sources/hashes.json` records every pinned revision's source
+NAR hash and immutable archive URL, including currently disabled grammars.
+Missing catalog coverage fails evaluation with the grammar names.
 
-The deleted GitHub cylc grammar repository is also bundled.
+Each build-time fixed-output fetcher tries the owned archive first and the
+upstream archive second. Nix can substitute the extracted source from a binary
+cache. Every archive preserves the complete source tree, licenses and executable
+bits; source subpaths and the grammar compiler stay unchanged. The deleted GitHub
+cylc source is retained in the owned archive set. Standalone `hx --grammar fetch`
+retains upstream behavior.
 
-The eleven archives occupy 1,190,465 bytes compressed. They contain third-party
-sources, not maintained parser changes, and are excluded from the Rust source
-build. This replaces evaluation-time Codeberg and SourceHut Git fetches from upstream Steel
-baseline `5a8635be`; fixed-output network fetchers alone would still require a
-working source server on a cold build.
+Darwin builds use the pinned Nix build tool for case-aware archive import and NAR
+restoration, preserving source paths that differ only by letter case. Its private
+store and download cache are temporary build state; Nix remains a build input.
 
-When changing a bundled revision, fetch the exact upstream Git tree, archive it
-under a single `source/` directory, and record `nix hash path` for that tree in
-`grammar-sources/hashes.json`. Preserve every file and executable bit, including
-licenses, and remove snapshots no longer referenced by `languages.toml`. Use
-deterministic archive metadata (zero timestamps and numeric owners). A missing
-snapshot fails evaluation instead of falling back to the network. These local
-snapshots can be removed when upstream provides an immutable source bundle that
-satisfies the same contract.
+The 290 source archives occupy 131,002,860 bytes compressed and live in the
+immutable `grammar-sources-2026-11-02` release assets of this repository, outside
+the editor's Git tree and Rust build sources. Retain previous assets when
+publishing a grammar update. For each changed revision, use the exact upstream
+archive from the fallback URL, or an already verified source copy. Archive the
+unmodified tree under one `source/` directory with zero timestamps and numeric owners;
+record `nix hash path` for that tree, preserving all files and executable bits.
+Create a new source release tag for each update, upload all changed archives to
+its draft, then publish it before committing the consuming catalog entries. An
+immutable release cannot accept additional assets. Reuse existing immutable URLs
+for unchanged revisions.
 
-Run `nix build .#checks.x86_64-linux.codeberg_grammars` (or
-`nix build .#checks.aarch64-darwin.codeberg_grammars` on macOS). The check rejects
-Codeberg and SourceHut network fetches during evaluation and compiles every bundled
-grammar through the production builder, including grammars with source subpaths.
-Nova runs this check in its existing Linux and Darwin jobs.
+Run `nix build .#checks.x86_64-linux.codeberg_grammars` (or the matching system
+on macOS). The historical check name covers every selected grammar and rejects direct
+`builtins.*` source fetches in `grammars.nix`. `nix build .#grammar-sources` produces a
+source-only closure containing every cataloged grammar source, including disabled
+ones, for explicit binary-cache publication and retained pins. Publishing the
+editor's runtime closure alone does not retain its build-time sources. Consumers
+must publish and pin this output in their configured cache.
 
 ## Downstream LOC Scorecard
 
@@ -85,11 +93,11 @@ Measured against upstream Steel tip `5a8635be` and excluding documentation:
 | Native transport tests | 167 | 0 | +167 |
 | Focused CI workflow | 47 | 0 | +47 |
 | Steel component layering | 161 | 50 | +111 |
-| Pinned grammar source delivery and check | 42 | 1 | +41 |
-| **Total** | **961** | **55** | **+906** |
+| Pinned grammar source delivery and check | 1231 | 28 | +1203 |
+| **Total** | **2150** | **82** | **+2068** |
 
-The source-delivery row includes 13 JSON manifest lines. The eleven compressed
-third-party source archives are counted separately above, not as owned LOC.
+The source-delivery row includes 1,162 JSON catalog lines and 69 added Nix lines.
+Third-party source archives are release assets, counted separately above.
 
 ## Upstream Helix README
 
