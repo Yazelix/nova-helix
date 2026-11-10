@@ -14,7 +14,7 @@ var skips = [ "--tutor" "--help" "--version" "-V" "--health" ]
 var grammar = [ "--grammar" "-g" ]
 
 ### Config commands
-var config = [ "--config" "-c" "--config-dir" ]
+var config = [ "--config" "-c" "--config-dir" "--listen" ]
 
 ### Set an arg-completer for the `hx` binary
 set edit:completion:arg-completer[hx] = {|@args|
@@ -52,5 +52,6 @@ set edit:completion:arg-completer[hx] = {|@args|
   $candidate "--hsplit" "(Splits all given files horizontally)"
   $candidate "--config" "(Specifies a file to use for configuration)"
   $candidate "--config-dir" "(Specifies a directory to use for configuration)"
+  $candidate "--listen" "(Listen for open-file requests on a private Unix socket)"
   $candidate "--log" "(Specifies a file to write log data into)"
 }

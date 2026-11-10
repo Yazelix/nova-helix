@@ -303,9 +303,15 @@ pub fn file_picker(editor: &Editor, root: PathBuf) -> FilePicker {
         }
     }
     if hit_timeout {
+        #[cfg(feature = "integration")]
+        let runtime = tokio::runtime::Handle::current();
         std::thread::spawn(move || {
+            #[cfg(feature = "integration")]
+            let _runtime = runtime.enter();
+            // Drop the injector (which requests redraw) before the runtime guard.
+            let scoped_injector = injector;
             for file in files {
-                if injector.push(file).is_err() {
+                if scoped_injector.push(file).is_err() {
                     break;
                 }
             }

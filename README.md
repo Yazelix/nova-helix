@@ -76,6 +76,13 @@ ones, for explicit binary-cache publication and retained pins. Publishing the
 editor's runtime closure alone does not retain its build-time sources. Consumers
 must publish and pin this output in their configured cache.
 
+## Native listener
+
+On Unix, start `hx --listen /absolute/private/editor.sock` to accept open-file
+requests in that editor, including builds without Steel. The caller creates the
+private mode-0700 parent directory. See the [native listener protocol](docs/steel-plugin-integration.md#native-open-file-listener)
+for version-1 JSON requests, permissions, deadlines and failure semantics.
+
 ## Downstream LOC Scorecard
 
 Measured against upstream Steel tip `5a8635be` and excluding documentation:
@@ -83,18 +90,24 @@ Measured against upstream Steel tip `5a8635be` and excluding documentation:
 | Surface | Added | Removed | Net |
 | --- | ---: | ---: | ---: |
 | Config-directory runtime seam | 19 | 0 | +19 |
-| CLI completions | 12 | 4 | +8 |
+| CLI completions | 16 | 4 | +12 |
 | Nix package export | 1 | 0 | +1 |
 | Steel bridge actions | 15 | 0 | +15 |
 | Steel request composition | 39 | 0 | +39 |
 | Steel plugin package | 6 | 0 | +6 |
 | Steel integration test | 68 | 0 | +68 |
-| Native transport seam | 384 | 0 | +384 |
-| Native transport tests | 167 | 0 | +167 |
+| Native transport and listener | 1060 | 0 | +1060 |
+| Native transport/listener tests and fixtures | 895 | 0 | +895 |
+| Native listener startup, input cancellation and integration wiring | 78 | 7 | +71 |
 | Focused CI workflow | 47 | 0 | +47 |
 | Steel component layering | 161 | 50 | +111 |
 | Pinned grammar source delivery and check | 1231 | 28 | +1203 |
-| **Total** | **2150** | **82** | **+2068** |
+| **Total** | **3636** | **89** | **+3547** |
+
+Native transport files are split into production and tests at `#[cfg(test)]`;
+listener tests also include headless application tests, CLI tests and JSON
+fixtures. Listener wiring is the diff from `af9acb13` in the existing startup,
+argument, prompt-hook, feature and integration-harness files.
 
 The source-delivery row includes 1,162 JSON catalog lines and 69 added Nix lines.
 Third-party source archives are release assets, counted separately above.

@@ -1200,6 +1200,15 @@ fn workspace_trust_indicator_visible(editor: &Editor) -> bool {
 }
 
 impl EditorView {
+    #[cfg(unix)]
+    pub(crate) fn cancel_remote_input(&mut self, cx: &mut commands::Context) {
+        self.handle_non_key_input(cx);
+        self.keymaps.sticky = None;
+        cx.editor.count = None;
+        cx.editor.selected_register = None;
+        cx.editor.autoinfo = None;
+    }
+
     /// must be called whenever the editor processed input that
     /// is not a `KeyEvent`. In these cases any pending keys/on next
     /// key callbacks must be canceled.

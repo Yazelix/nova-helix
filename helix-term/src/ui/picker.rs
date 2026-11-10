@@ -56,6 +56,22 @@ use self::handlers::{DynamicQueryChange, DynamicQueryHandler, PreviewHighlightHa
 
 pub const ID: &str = "picker";
 
+// Integration redraws must target the runtime that owns this picker.
+fn redraw_callback() -> impl Fn() + Send + Sync + 'static {
+    #[cfg(feature = "integration")]
+    {
+        let runtime = tokio::runtime::Handle::current();
+        move || {
+            let _runtime = runtime.enter();
+            helix_event::request_redraw();
+        }
+    }
+    #[cfg(not(feature = "integration"))]
+    {
+        helix_event::request_redraw
+    }
+}
+
 pub const MIN_AREA_WIDTH_FOR_PREVIEW: u16 = 72;
 /// Biggest file size to preview in bytes
 pub const MAX_FILE_SIZE_FOR_PREVIEW: u64 = 10 * 1024 * 1024;
@@ -281,7 +297,7 @@ impl<T: 'static + Send + Sync, D: 'static + Send + Sync> Picker<T, D> {
         assert!(matcher_columns > 0);
         let matcher = Nucleo::new(
             Config::DEFAULT,
-            Arc::new(helix_event::request_redraw),
+            Arc::new(redraw_callback()),
             None,
             matcher_columns,
         );
@@ -316,7 +332,7 @@ impl<T: 'static + Send + Sync, D: 'static + Send + Sync> Picker<T, D> {
         assert!(matcher_columns > 0);
         let matcher = Nucleo::new(
             Config::DEFAULT,
-            Arc::new(helix_event::request_redraw),
+            Arc::new(redraw_callback()),
             None,
             matcher_columns,
         );

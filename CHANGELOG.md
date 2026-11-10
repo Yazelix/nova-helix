@@ -24,6 +24,7 @@ Packaging:
 
 Commands:
 
+* Add `--listen PATH` on Unix to open files in a running editor through a private, bounded JSON socket, with or without Steel.
 * Add `--config-dir <path>` to override the Helix configuration directory independently of `--config`.
 * Provide Steel actions that open files or a directory picker in the current Helix instance while setting its managed workspace.
 * Compose the loopback transport and Steel actions with required payload validation and a caller-provided token.

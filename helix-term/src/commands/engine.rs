@@ -3,7 +3,7 @@ use helix_core::syntax;
 use helix_lsp::{jsonrpc, LanguageServerId};
 use helix_view::{document::Mode, input::KeyEvent};
 
-#[cfg(unix)]
+#[cfg(all(unix, not(feature = "integration")))]
 use termina::{EventReader, Terminal};
 
 use std::{borrow::Cow, sync::Arc};
@@ -69,7 +69,7 @@ pub struct TerminalEventReaderHandle;
 
 #[cfg(any(windows, feature = "integration"))]
 impl TerminalEventReaderHandle {
-    pub fn new(terminal: &TerminalBackend) -> Self {
+    pub fn new(_terminal: &TerminalBackend) -> Self {
         Self
     }
 }

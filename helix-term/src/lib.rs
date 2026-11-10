@@ -11,6 +11,8 @@ pub mod health;
 pub mod job;
 pub mod keymap;
 pub mod logging;
+#[cfg(any(unix, feature = "steel"))]
+mod remote;
 pub mod ui;
 
 #[cfg(not(windows))]

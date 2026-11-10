@@ -15,6 +15,7 @@ complete -c hx -l vsplit -d "Splits all given files vertically"
 complete -c hx -l hsplit -d "Splits all given files horizontally"
 complete -c hx -s c -l config -r -d "Specifies a file to use for config"
 complete -c hx -l config-dir -r -d "Specifies a directory to use for config" -xa "(__fish_complete_directories)"
+complete -c hx -l listen -r -d "Listen for open-file requests on a private Unix socket"
 complete -c hx -l log -r -d "Specifies a file to use for logging"
 complete -c hx -s w -l working-dir -d "Specify initial working directory" -xa "(__fish_complete_directories)"
 

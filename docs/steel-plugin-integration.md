@@ -18,7 +18,7 @@ behind during Steel engine reload or editor shutdown.
 
 ## What worked well
 
-Steel owns all editor behavior in the fork. The complete action module is 15
+Steel owns the Nova bridge's editor behavior. The complete action module is 15
 lines of Scheme:
 
 - `change-current-directory` adopts the managed workspace.
@@ -49,40 +49,106 @@ Relevant source:
 - [Steel integration test harness](../helix-term/tests/yazelix_steel.rs)
 - [Native transport seam](../helix-term/src/commands/engine/steel/yazelix_transport.rs)
 
-## Why the server stayed in Rust
+## Native open-file listener
 
-Steel `1b785a4e` provides a useful TCP floor: connect, listen, local-address
-lookup, blocking accept, nonblocking listener and stream modes, stream ports,
-and stream shutdown. Steel also provides native threads, channels, and an
-explicit thread join.
+On Unix, `hx --listen /absolute/private/editor.sock [FILE...]` accepts open-file
+requests with or without Steel. It starts after argument files open. The caller
+creates the parent directory, owned by the current user with no group or other
+permissions (normally 0700). Helix creates the socket with mode 0600 without
+changing the process umask. The private directory protects socket creation too.
+Helix resolves the parent once and validates every ancestor of that canonical
+path: current-user/root ownership, no group/other writes unless sticky. This
+permits trusted sticky roots such as `/tmp` while rejecting a replaceable shared
+ancestor. Bind, stale probing/removal and cleanup use only the canonical path;
+retargeting an original alias or intermediate symlink cannot redirect them.
+Permissions are set relative to the held verified parent directory, without a
+process-global umask.
+Access is granted to the same user; this listener needs no token or registry.
 
-The following lifecycle pieces were missing from the reviewed surface:
+Give each editor its own absolute socket path. The canonical path including its terminating
+NUL must fit the Unix socket limit (108 bytes on Linux, 104 on macOS). Helix
+refuses non-socket paths, symlinks and live sockets. It removes a stale socket
+only after connection refused and a matching device/inode check. Two editors
+racing for one path are unsupported. A bind failure logs and displays a
+`--listen` error; editing remains available without listening. Windows rejects
+the flag.
 
-| Needed contract | Reviewed Steel surface | Consequence |
-| --- | --- | --- |
-| Bound idle reads and writes | No TCP read-timeout or write-timeout setter | A blocking stream can hold the server past its request budget; nonblocking mode requires a polling state machine. |
-| Interrupt a blocked listener | No listener close, shutdown, timed accept, or cancellable accept | A thread blocked in `tcp-accept` cannot stop in response to engine reload. |
-| Cancel native I/O before joining a plugin thread | `thread-join!` waits; `thread-suspend` does not interrupt native code | A plugin must arrange its own socket wakeup and cancellation before join. |
-| Deliver a background request to Helix and await its editor-thread result | Helix exposes editor-thread callbacks, but the reviewed plugin surface has no request-response ingress primitive for a background Steel server | A Steel implementation needs a worker channel, editor polling callback, response channel, generation handling, and shutdown coordination. |
+Send one newline-terminated UTF-8 JSON object per connection. Frames including
+the newline fit within 64 KiB. Native v1 is independent of Steel's schema 2:
 
-A Steel-only implementation could put both listener and streams in
-nonblocking mode and build polling, framing, channels, and reload coordination
-in Scheme. That design adds more lifecycle machinery than the native seam and
-makes prompt shutdown harder to prove.
+```json
+{"version":1,"id":"open-1","action":"open","paths":["/absolute/file.rs:12:3"],"timeout_ms":750}
+{"version":1,"id":"open-1","status":"ok"}
+{"version":1,"id":"open-1","status":"error","error":{"class":"rejected","message":"...","path_index":0}}
+```
 
-The Rust module owns the mechanism Steel could not express with the same
-bounded lifecycle:
+`version`, `id`, `action` and `paths` are required. `id` contains 1–256 UTF-8
+bytes and is echoed when valid. Malformed JSON or an invalid id gets an empty
+`id`. Unknown fields are rejected. A different unsigned version gets a v1
+`unsupported` response, even when its other fields differ. Optional `timeout_ms`
+is an integer from 1 to 2000 (default 2000), bounding editor wait after the frame.
 
-- bind `127.0.0.1:0` and return the selected address;
-- apply socket deadlines and 64 KiB request and response limits;
-- authenticate before editor dispatch;
-- track the active stream, wake blocked accept, stop, and join the listener;
-- dispatch through Helix's job queue with an engine-generation guard.
+`open` is the only action. `paths` is a nonempty list of absolute UTF-8 file
+paths without NUL; directories are rejected. Paths are validated before dispatch
+and opened in order in the focused view. `FILE:LINE[:COL]` uses command-line
+parsing (1-based positions clamped to the document); an existing literal filename
+takes precedence. A suffix moves the cursor and centers the view. Without one,
+an already-open buffer keeps its selection and is not reloaded. A missing file
+becomes a new named buffer. Multiple opens are not a transaction: an error can
+leave earlier paths open; zero-based `error.path_index` identifies the failure.
 
-The module uses the Rust standard library plus Helix's existing Serde stack. It
-does not publish endpoints or tokens, select an editor instance, or interpret
-editor actions. This boundary costs 384 production Rust lines and 167 focused
-test lines in the fork.
+Modified buffers and insert undo history remain. Insert mode changes to normal
+mode and closes completion/signature UI for the old document. Document-bound
+prompts close on focus loss, following upstream behaviour; this
+includes a half-typed search or command prompt. Pending keys and next-key
+callbacks are cancelled against the old document before switching. A picker
+keeps its own filter/selection. An unmodified scratch buffer is replaced according to
+ordinary buffer switching.
+
+Error classes are closed in v1:
+
+| Class | Meaning |
+| --- | --- |
+| `invalid` | Bad/oversized frame, fields, id, timeout or paths. No open dispatched. |
+| `unsupported` | Unknown version or action. No open dispatched. |
+| `rejected` | Editor/filesystem open failed; `path_index` identifies it. Earlier paths may have opened. |
+| `timeout` | Queued request expired and was abandoned. Its callback cannot open later. |
+| `unavailable` | Listener stopped, editor queue unavailable, or execution began without a timely result. Outcome may be unknown. |
+
+Connections are served serially; additional clients wait in the operating
+system's socket queue. An idle or slow client can delay them. Frame reads share
+a total 2-second deadline, so trickling bytes cannot hold the server indefinitely.
+Editor wait uses the earlier of that connection deadline and `timeout_ms`.
+Replies use nonblocking writes so a client that will not read cannot hold the
+server. Incomplete/timed-out I/O can close without a JSON reply.
+
+A client timeout/disconnect does **not** cancel a request. Allow time for the
+server response, for example a 750-ms server budget within a 1-second client
+deadline. Only a `timeout` reply promises abandonment. A lost reply or
+`unavailable` does not prove whether a file opened; do not retry an uncertain
+request assuming it did not run.
+
+Close/drop stops and joins the listener. On Unix, poll waits for listener
+readiness or a private stop channel, with no
+periodic idle wakeups. Active-stream shutdown interrupts blocked I/O; exit never
+connects to a possibly replaced socket path. The non-Unix Steel fallback still
+uses a short accept poll interval. Cleanup unlinks
+only a matching device/inode. SIGHUP uses graceful shutdown like SIGTERM/SIGINT.
+SIGKILL, aborts and machine failure can leave stale sockets for the next launch's
+recovery or the caller's runtime-directory sweep.
+
+The shared [transport](../helix-term/src/remote.rs) owns framing and lifecycle.
+The [native adapter](../helix-term/src/remote/native.rs) owns v1 validation and
+editor dispatch. The [Steel adapter](../helix-term/src/remote/steel.rs) retains
+schema 2, constant-time token checks, the 5-second maximum, response bounds and
+existing error classes. Its builtin wrapper retains the rooted closure and
+engine-generation guard; Nova's actions and registration stay unchanged.
+The mechanism uses the standard library and existing Serde/libc dependencies.
+Steel lacks bounded/cancellable I/O and an equivalent editor request ingress.
+
+Reusable request/error fixtures for clients and ports are in
+[`native-listener-v1.json`](../helix-term/tests/fixtures/native-listener-v1.json).
+Error messages are diagnostic text, not strings clients should match.
 
 ## Steel improvements that would change this decision
 
@@ -101,6 +167,13 @@ joined lifecycle. Yazelix could then reassess the remaining native transport.
 
 Focused tests cover loopback allocation, authentication before dispatch,
 malformed and oversized input, response bounds, handler timeout, explicit
-stop, idle-connection shutdown, and owner drop. The exact Nix-built Linux
-binary and isolated Steel module pass their checks. The code uses portable
-standard TCP. Yazelix has not exercised this runtime on macOS.
+stop, idle-connection shutdown, and owner drop. The original Steel bridge was
+checked with the Nix-built Linux binary and isolated Steel module; native
+listener proof is recorded with its change. Yazelix has not exercised this
+runtime on macOS.
+
+Accept errors other than interruption stop the server (inherited from the Steel
+transport). Pathname races with other processes of the same trusted user remain
+unsupported. Filesystem opens retain Helix's usual blocking I/O semantics,
+including a FIFO or stalled filesystem blocking the editor thread; a client
+must treat a lost response as an uncertain outcome.

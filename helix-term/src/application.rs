@@ -81,6 +81,8 @@ pub struct Application {
     lsp_progress: LspProgressMap,
 
     theme_mode: Option<theme::Mode>,
+    #[cfg(unix)]
+    remote: Option<crate::remote::OpenServer>,
 }
 
 #[cfg(feature = "integration")]
@@ -263,8 +265,22 @@ impl Application {
             signal::SIGUSR1,
             signal::SIGTERM,
             signal::SIGINT,
+            signal::SIGHUP,
         ])
         .context("build signal handler")?;
+
+        #[cfg(unix)]
+        let remote = args
+            .listen
+            .and_then(|path| match crate::remote::OpenServer::start(&path) {
+                Ok(server) => Some(server),
+                Err(error) => {
+                    let message = format!("--listen {}: {error}", path.display());
+                    log::error!("{message}");
+                    editor.set_error(message);
+                    None
+                }
+            });
 
         let app = Self {
             compositor,
@@ -275,6 +291,8 @@ impl Application {
             jobs,
             lsp_progress: LspProgressMap::new(),
             theme_mode,
+            #[cfg(unix)]
+            remote,
         };
 
         Ok(app)
@@ -618,6 +636,10 @@ impl Application {
             signal::SIGUSR1 => {
                 self.refresh_config();
                 self.render().await;
+            }
+            signal::SIGHUP => {
+                let _ = self.restore_term();
+                return false;
             }
             signal::SIGTERM | signal::SIGINT => {
                 self.restore_term().unwrap();
@@ -1438,6 +1460,8 @@ impl Application {
     }
 
     pub async fn close(&mut self) -> Vec<anyhow::Error> {
+        #[cfg(unix)]
+        self.remote.take();
         // [NOTE] we intentionally do not return early for errors because we
         //        want to try to run as much cleanup as we can, regardless of
         //        errors along the way
@@ -1469,3 +1493,7 @@ impl ui::menu::Item for lsp::MessageActionItem {
         self.title.as_str().into()
     }
 }
+
+#[cfg(all(test, feature = "integration", unix))]
+#[path = "application/remote_tests.rs"]
+mod remote_tests;

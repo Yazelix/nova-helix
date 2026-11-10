@@ -21,6 +21,7 @@ export extern hx [
     --config(-c): glob,                         # Specifies a file to use for configuration
     --config-dir: glob,                         # Specifies a directory to use for configuration
     -v,                                         # Increases logging verbosity each use for up to 3 times
+    --listen: glob,                             # Listen for open-file requests on a private Unix socket
     --log: glob,                                # Specifies a file to use for logging
     --version(-V),                              # Prints version information
     --vsplit,                                   # Splits all given files vertically into different windows

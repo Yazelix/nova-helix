@@ -21,6 +21,7 @@ _hx() {
 		"--config-dir[Specifies a directory to use for configuration]:directory:_directories" \
 		"-w[Specify initial working directory]" \
 		"--working-dir[Specify initial working directory]" \
+		"--listen[Listen for open-file requests on a private Unix socket]:socket:_files" \
 		"--log[Specifies a file to use for logging]" \
 		"*:file:_files"
 

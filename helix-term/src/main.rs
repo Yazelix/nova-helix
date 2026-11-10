@@ -58,6 +58,7 @@ FLAGS:
     -c, --config <file>            Specify a file to use for configuration
     --config-dir <path>            Specify a directory to use for configuration
     -v                             Increase logging verbosity each use for up to 3 times
+    --listen <path>                Listen for open-file requests on a private Unix socket
     --log <file>                   Specify a file to use for logging
                                    (default file: {})
     -V, --version                  Print version information

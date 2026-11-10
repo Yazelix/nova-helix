@@ -17,6 +17,7 @@ pub struct Args {
     pub split: Option<Layout>,
     pub verbosity: u64,
     pub log_file: Option<PathBuf>,
+    pub listen: Option<PathBuf>,
     pub config_file: Option<PathBuf>,
     pub config_dir: Option<PathBuf>,
     pub files: IndexMap<PathBuf, Vec<Position>>,
@@ -78,6 +79,15 @@ impl Args {
                     Some(path) => args.config_dir = Some(path.into()),
                     None => anyhow::bail!("--config-dir must specify a path to use"),
                 },
+                "--listen" => {
+                    #[cfg(not(unix))]
+                    anyhow::bail!("--listen is only available on Unix");
+                    #[cfg(unix)]
+                    match argv.next().as_deref() {
+                        Some(path) => args.listen = Some(path.into()),
+                        None => anyhow::bail!("--listen must specify an absolute socket path"),
+                    }
+                }
                 "--log" => match argv.next().as_deref() {
                     Some(path) => args.log_file = Some(path.into()),
                     None => anyhow::bail!("--log must specify a path to write"),

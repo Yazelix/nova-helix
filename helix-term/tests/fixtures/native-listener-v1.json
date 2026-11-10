@@ -1,0 +1,12 @@
+[
+  {"request":{"version":1,"id":"open","action":"open","paths":["/absolute/file.rs:12:3"]},"response":{"version":1,"id":"open","status":"ok"}},
+  {"request":{"version":2,"id":"future"},"response":{"version":1,"id":"future","status":"error","error":{"class":"unsupported"}}},
+  {"request":{"version":1,"id":"action","action":"shell","paths":["/file"]},"response":{"version":1,"id":"action","status":"error","error":{"class":"unsupported"}}},
+  {"request":{"version":1,"id":"fields","action":"open","paths":["/file"],"extra":true},"response":{"version":1,"id":"fields","status":"error","error":{"class":"invalid"}}},
+  {"request":{"version":1,"id":"relative","action":"open","paths":["file"]},"response":{"version":1,"id":"relative","status":"error","error":{"class":"invalid"}}},
+  {"request":{"version":1,"id":"empty","action":"open","paths":[]},"response":{"version":1,"id":"empty","status":"error","error":{"class":"invalid"}}},
+  {"request":{"version":1,"id":"nul","action":"open","paths":["/file\u0000"]},"response":{"version":1,"id":"nul","status":"error","error":{"class":"invalid"}}},
+  {"request":{"version":1,"id":"bound","action":"open","paths":["/file"],"timeout_ms":2001},"response":{"version":1,"id":"bound","status":"error","error":{"class":"invalid"}}},
+  {"request":{"version":1,"id":"","action":"open","paths":["/file"]},"response":{"version":1,"id":"","status":"error","error":{"class":"invalid"}}},
+  {"request":{"version":1,"id":"null","action":"open","paths":["/file"],"timeout_ms":null},"response":{"version":1,"id":"null","status":"error","error":{"class":"invalid"}}}
+]

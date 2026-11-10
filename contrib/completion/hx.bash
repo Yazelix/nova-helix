@@ -25,7 +25,7 @@ _hx() {
 
     case "$2" in
     -*)
-        mapfile -t COMPREPLY < <(compgen -W "-h --help --tutor -V --version -v -vv -vvv --health -g --grammar --vsplit --hsplit -c --config --config-dir --log" -- """$2""")
+        mapfile -t COMPREPLY < <(compgen -W "-h --help --tutor -V --version -v -vv -vvv --health -g --grammar --vsplit --hsplit -c --config --config-dir --log --listen" -- """$2""")
         return 0
         ;;
     *)
