@@ -1,0 +1,15 @@
+theme = "carbonfox"
+
+[editor]
+bufferline = "multiple"
+cursorline = true
+color-modes = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = true

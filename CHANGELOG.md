@@ -22,6 +22,10 @@ Packaging:
 
 # Yazelix fork
 
+Usability improvements:
+
+* Embed carbonfox, soft wrapping, a multiple-buffer line, cursorline, colored modes, an insert bar cursor and indent guides below user and trusted workspace configuration; trusted workspace settings also load when the user has no config file.
+
 Commands:
 
 * Add `--listen PATH` on Unix to open files in a running editor through a private, bounded JSON socket, with or without Steel.

@@ -7,6 +7,45 @@ To override global configuration parameters, create a `config.toml` file located
 
 > 💡 You can easily open the config file by typing `:config-open` within Helix normal mode.
 
+Nova Helix embeds `helix-term/src/default_config.toml` below your configuration.
+It selects `theme = "carbonfox"`, `editor.bufferline = "multiple"`,
+`editor.cursorline = true`, `editor.color-modes = true`,
+`editor.soft-wrap.enable = true`, `editor.cursor-shape.insert = "bar"` and
+`editor.indent-guides.render = true`. It applies even without a user config file
+and is also used when startup falls back after a configuration error. The file
+contains no keymaps, arrays or workspace-trust settings.
+
+Set any of these keys in your own file to override it; omitted keys retain the
+embedded defaults. This example restores the upstream choices:
+
+```toml
+theme = "default"
+
+[editor]
+bufferline = "never"
+cursorline = false
+color-modes = false
+
+[editor.soft-wrap]
+enable = false
+
+[editor.cursor-shape]
+insert = "block"
+
+[editor.indent-guides]
+render = false
+```
+
+Global configuration (including `-c FILE`) overrides the embedded file, and
+trusted `.helix/config.toml` overrides the global configuration. Workspace trust
+policy comes only from the global configuration, even if the workspace tries to
+change it. `:config-open` opens your file, and `:config-reload` reloads these layers.
+Managed applications can supply explicit configuration that overrides these
+defaults too. Carbonfox paints its own background, including in a transparent
+terminal window. It requires true color; without detected support, Helix falls
+back to its default theme. Set `editor.true-color = true` to override detection
+when your terminal supports true color but Helix does not detect it.
+
 Example config:
 
 ```toml

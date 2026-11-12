@@ -4,6 +4,12 @@ This fork tracks Helix's Steel-enabled line. Native changes are limited to
 capabilities unavailable to Steel; editor behavior belongs in Steel plugins
 when its APIs can satisfy the contract.
 
+Nova Helix embeds [a default configuration](helix-term/src/default_config.toml)
+with carbonfox, soft wrapping, a multiple-buffer line, cursorline, colored modes,
+an insert bar cursor and indent guides. User configuration and trusted workspace
+configuration override it without rewriting either file; standalone and managed
+launches use the same base. See [configuration](book/src/configuration.md).
+
 `packages.<system>.yazelix_helix_steel` installs the isolated
 `yazelix/bridge-actions.scm` and `yazelix/bridge.scm` modules. The bridge
 validates `helix.open_files` and `helix.open_directory` payloads before opening

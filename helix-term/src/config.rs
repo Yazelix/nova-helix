@@ -26,11 +26,8 @@ pub struct ConfigRaw {
 
 impl Default for Config {
     fn default() -> Config {
-        Config {
-            theme: None,
-            keys: keymap::default(),
-            editor: helix_view::editor::Config::default(),
-        }
+        Config::load(Ok(""), Err(ConfigLoadError::default()))
+            .expect("embedded default configuration must be valid")
     }
 }
 
@@ -57,11 +54,17 @@ impl Display for ConfigLoadError {
 
 impl Config {
     pub fn load(
-        global: Result<&String, ConfigLoadError>,
+        global: Result<&str, ConfigLoadError>,
         local: Result<String, ConfigLoadError>,
     ) -> Result<Config, ConfigLoadError> {
-        let global_config: Result<ConfigRaw, ConfigLoadError> =
-            global.and_then(|file| toml::from_str(file).map_err(ConfigLoadError::BadConfig));
+        let global_config: Result<ConfigRaw, ConfigLoadError> = global.and_then(|file| {
+            let defaults = toml::from_str(include_str!("default_config.toml"))
+                .map_err(ConfigLoadError::BadConfig)?;
+            let user = toml::from_str(file).map_err(ConfigLoadError::BadConfig)?;
+            merge_toml_values(defaults, user, 4)
+                .try_into()
+                .map_err(ConfigLoadError::BadConfig)
+        });
         let local_config: Result<ConfigRaw, ConfigLoadError> =
             local.and_then(|file| toml::from_str(&file).map_err(ConfigLoadError::BadConfig));
         let res = match (global_config, local_config) {
@@ -118,8 +121,11 @@ impl Config {
     }
 
     pub fn load_default() -> Result<Config, ConfigLoadError> {
-        let global_config =
-            fs::read_to_string(helix_loader::config_file()).map_err(ConfigLoadError::Error)?;
+        let global_config = match fs::read_to_string(helix_loader::config_file()) {
+            Ok(config) => config,
+            Err(err) if err.kind() == std::io::ErrorKind::NotFound => String::new(),
+            Err(err) => return Err(ConfigLoadError::Error(err)),
+        };
         let local_config = fs::read_to_string(helix_loader::workspace_config_file())
             .map_err(ConfigLoadError::Error);
 
@@ -157,7 +163,7 @@ mod tests {
 
     impl Config {
         fn load_test(config: &str) -> Config {
-            Config::load(Ok(&config.to_owned()), Err(ConfigLoadError::default())).unwrap()
+            Config::load(Ok(config), Err(ConfigLoadError::default())).unwrap()
         }
     }
 
@@ -208,5 +214,66 @@ mod tests {
         // From the Default trait
         let default_keys = Config::default().keys;
         assert_eq!(default_keys, keymap::default());
+    }
+
+    #[test]
+    fn embedded_defaults_apply_to_empty_config_and_error_fallback() {
+        let embedded = Config::load_test(include_str!("default_config.toml"));
+        assert!(Config::load_test("") == embedded);
+        // Startup and health use Default after reporting malformed user configuration.
+        assert!(Config::default() == embedded);
+    }
+
+    #[test]
+    fn user_overrides_preserve_unspecified_embedded_defaults() {
+        let embedded = Config::load_test(include_str!("default_config.toml"));
+        let user = Config::load_test(
+            r#"
+            theme = "default"
+            [editor]
+            cursorline = false
+            [editor.soft-wrap]
+            max-wrap = 10
+            "#,
+        );
+        assert_ne!(user.theme, embedded.theme);
+        assert!(!user.editor.cursorline);
+        assert_eq!(user.editor.soft_wrap.max_wrap, Some(10));
+        assert_eq!(
+            user.editor.soft_wrap.enable,
+            embedded.editor.soft_wrap.enable
+        );
+        assert_eq!(user.editor.bufferline, embedded.editor.bufferline);
+        assert_eq!(user.keys, keymap::default());
+    }
+
+    #[test]
+    fn workspace_overrides_user_and_embedded_config() {
+        let workspace =
+            "[editor]\ncursorline = false\nbufferline = 'never'\n[editor.soft-wrap]\nmax-wrap = 20";
+        for user in ["", "theme = 'default'\n[editor]\ncursorline = true"] {
+            let merged = Config::load(Ok(user), Ok(workspace.to_owned())).unwrap();
+            assert_eq!(merged.theme, Config::load_test(user).theme);
+            assert!(!merged.editor.cursorline);
+            assert_eq!(merged.editor.soft_wrap.max_wrap, Some(20));
+            assert_eq!(
+                merged.editor.bufferline,
+                helix_view::editor::BufferLine::Never
+            );
+        }
+    }
+
+    #[test]
+    fn invalid_user_and_workspace_configs_remain_errors() {
+        for invalid in ["[", "[editor]\ncursorline = 1", "unknown = true"] {
+            assert!(matches!(
+                Config::load(Ok(invalid), Err(ConfigLoadError::default())),
+                Err(ConfigLoadError::BadConfig(_))
+            ));
+            assert!(matches!(
+                Config::load(Ok(""), Ok(invalid.to_owned())),
+                Err(ConfigLoadError::BadConfig(_))
+            ));
+        }
     }
 }
